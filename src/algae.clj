@@ -133,5 +133,3 @@
       (number? r) (str (variable l) "=" (round (- r (number l))))
       (number? l) (str (variable r) "=" (round (- l (number r))))
       :else (eq-ast s))))
-
-;(solve "-11b+7=40")

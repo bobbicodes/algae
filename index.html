@@ -23,87 +23,87 @@
 </code></pre>
 <pre><code class="language-klipse">
         (defn parse-num [s]
+  (cond
+    (str/includes? s "/") (cljs.reader/read-string s)
+    (str/includes? s ".") (js/parseFloat s)
+    :else (js/parseInt s)))
+
+(defn parse-var [& s]
+  (if (number? (first s))
+    {:var (last s) :factor (first s)}
+    {:var (last s) :factor 1}))
+
+(defn parse-ratio [& s]
+  {:numer (first s) :denom (last s)})
+
+(defn eq-parse [s]
+  (->> (parse-expr s)
+    (insta/transform
+     {:number (comp parse-num str)
+      :var parse-var
+      :ratio parse-ratio})))
+
+(defn collect-nums [v]
+  (loop [terms v nums [] collected []]
+    (if (empty? terms)
+      (conj collected (reduce + nums))
+      (if (number? (first terms))
+        (recur (rest terms) (conj nums (first terms)) collected)
+        (recur (rest terms) nums (conj collected (first terms)))))))
+
+(defn negate [x]
+  (cond
+    (number? x) (- x)
+    (map? x) {:var (:var x) :factor (- (:factor x))}
+    :else "error"))
+
+(defn simp-nums [s]
+  (loop [terms (mapcat eq-parse (str/split s #"\+")) coll []]
+    (if (empty? terms)
+      (collect-nums coll)
+      (if (= "-" (first terms))
+        (recur (drop 2 terms) (conj coll (negate (second terms))))
         (cond
-          (str/includes? s "/") s
-          (str/includes? s ".") (js/parseFloat s)
-          :else (js/parseInt s)))
-      
-      (defn parse-var [& s]
-        (if (number? (first s))
-          {:var (last s) :factor (first s)}
-          {:var (last s) :factor 1}))
-      
-      (defn parse-ratio [& s]
-        {:numer (first s) :denom (last s)})
-      
-      (defn eq-parse [s]
-        (->> (parse-expr s)
-          (insta/transform
-           {:number (comp parse-num str)
-            :var parse-var
-            :ratio parse-ratio})))
-      
-      (defn collect-nums [v]
-        (loop [terms v nums [] collected []]
-          (if (empty? terms)
-            (conj collected (reduce + nums))
-            (if (number? (first terms))
-              (recur (rest terms) (conj nums (first terms)) collected)
-              (recur (rest terms) nums (conj collected (first terms)))))))
-      
-      (defn negate [x]
-        (cond
-          (number? x) (- x)
-          (map? x) {:var (:var x) :factor (- (:factor x))}
-          :else "error"))
-      
-      (defn simp-nums [s]
-        (loop [terms (mapcat eq-parse (str/split s #"\+")) coll []]
-          (if (empty? terms)
-            (collect-nums coll)
-            (if (= "-" (first terms))
-              (recur (drop 2 terms) (conj coll (negate (second terms))))
-              (cond
-                (number? (first terms))
-                (recur (rest terms) (conj coll (first terms)))
-                (map? (first terms))
-                (recur (rest terms)
-                       (conj coll {:var (:var (first terms))
-                                   :factor (:factor (first terms))})))))))
-      
-      (defn simp-var [v]
-        {:var (first v)
-         :factor (reduce + (map :factor (first (rest v))))})
-      
-      (defn simplify [s]
-        (into [(first (filter number? (simp-nums s)))]
-              (map simp-var (group-by #(:var %) (filter map? (simp-nums s))))))
-      
-      (defn parse [s]
-        (if (str/includes? s "=")
-          (let [l (eq-parse (first (str/split s #"=")))
-                r (eq-parse (last (str/split s #"=")))]
-            {:left (if (= 1 (count l)) (first l) (vec l))
-             :right (if (= 1 (count r)) (first r) (vec r))})
-          (first (eq-parse s))))
-      
-      (defn round [n]
-        (if (float? n) (float (/ (Math/round (* n 100)) 100)) n))
-      
-      (defn solve [s]
-        (match (parse s)
-               {:left [n1 {:var x :factor n2}] :right [n3]}
-               (str x "=" (round (/ (- n3 n1) n2)))
-               {:left [n1] :right [n2 {:var x :factor n3}]}
-               (str x "=" (round (/ (- n1 n2) n3)))
-               {:left {:numer {:var x :factor n1} :denom n2} :right n3}
-               (str x "=" (round (* n2 n3)))
-               {:left {:var x :factor n1} :right n2}
-               (str x "=" (round (/ n2 n1)))
-               {:left n1 :right {:numer {:var x :factor n2} :denom n3}}
-               (str x "=" (round (* n1 n3)))))
-      
-      (parse "k+22=29")
+          (number? (first terms))
+          (recur (rest terms) (conj coll (first terms)))
+          (map? (first terms))
+          (recur (rest terms)
+                 (conj coll {:var (:var (first terms))
+                             :factor (:factor (first terms))})))))))
+
+(defn simp-var [v]
+  {:var (first v)
+   :factor (reduce + (map :factor (first (rest v))))})
+
+(defn simplify [s]
+  (into [(first (filter number? (simp-nums s)))]
+        (map simp-var (group-by #(:var %) (filter map? (simp-nums s))))))
+
+(defn parse [s]
+  (if (str/includes? s "=")
+    (let [l (eq-parse (first (str/split s #"=")))
+          r (eq-parse (last (str/split s #"=")))]
+      {:left (if (= 1 (count l)) (first l) (vec l))
+       :right (if (= 1 (count r)) (first r) (vec r))})
+    (first (eq-parse s))))
+
+(defn round [n]
+  (if (float? n) (float (/ (Math/round (* n 100)) 100)) n))
+
+(defn solve [s]
+  (match (parse s)
+         {:left [n1 {:var x :factor n2}] :right [n3]}
+         (str x "=" (round (/ (- n3 n1) n2)))
+         {:left [n1] :right [n2 {:var x :factor n3}]}
+         (str x "=" (round (/ (- n1 n2) n3)))
+         {:left {:numer {:var x :factor n1} :denom n2} :right n3}
+         (str x "=" (round (* n2 n3)))
+         {:left {:var x :factor n1} :right n2}
+         (str x "=" (round (/ n2 n1)))
+         {:left n1 :right {:numer {:var x :factor n2} :denom n3}}
+         (str x "=" (round (* n1 n3)))))
+
+(parse "k+22=29")
 </code></pre>
 <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
 </body>

@@ -1,0 +1,51 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+BoxData[RowBox[{"D","[",RowBox[{RowBox[{RowBox[
+{RowBox[{"x","^","3"}]," ","z"}]," ","+"," ",RowBox[{"2"," ",RowBox[{"y","^","2"}]," ","x"}]," ","+"," ",RowBox[
+{"y"," ",RowBox[{"z","^","3"}]}]}],","," ","y",","," ","z"}],"]"}]],"Input",ExpressionUUID -> "a4bda2b0-87cd-4cc6-b97f-006d1254c03a",
+CellLabel -> "In[18]:= "],Cell[
+BoxData[RowBox[{"3"," ",SuperscriptBox["z","2"]}],
+StandardForm],"Output",ExpressionUUID -> "8ed8f7e5-8fb4-4621-aacd-73d227f0793a",CellLabel -> "Out[18]= "]},
+Open],ExpressionUUID -> "45243ea2-1caa-4a20-a721-b905140ca232"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{SubscriptBox["\[PartialD]",RowBox[{"x",",","y"}]],RowBox[{"(",RowBox[
+{SuperscriptBox["x","2"],"-"," ",RowBox[{"2"," ","x"," ","y"}],"+",RowBox[{"x"," ","y"," ","z"}]}],")"}]}]],
+"Input",ExpressionUUID -> "3db577ff-5d23-4830-8763-94b0d146883b",CellLabel -> "In[21]:= "],Cell[
+BoxData[
+RowBox[{RowBox[{"-","2"}],"+","z"}],StandardForm],"Output",ExpressionUUID -> "4624bbc1-c34e-4caa-8f32-0756fc873436",
+CellLabel -> "Out[21]= "]},Open],ExpressionUUID -> "14da338d-605c-41bd-a7d8-e71258d82d9b"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"\[Integral]",RowBox[{"\[Integral]",RowBox[{"\[Integral]",RowBox[
+{RowBox[{"(",RowBox[{RowBox[{"x","^","2"}]," ","+"," ",RowBox[{"y","^","2"}]," ","+"," ","\n","      ",RowBox[
+{"z","^","2"}]}],")"}]," ",RowBox[{"\[DifferentialD]","y"}]," ",RowBox[{"\[DifferentialD]","x"}]," ",RowBox[
+{"\[DifferentialD]","z"}]}]}]}]}]],"Input",ExpressionUUID -> "e12283ca-e8aa-4f9a-a597-07c153b7602a",
+CellLabel -> "In[11]:= "],Cell[
+BoxData[RowBox[{RowBox[{FractionBox["1","3"]," ",SuperscriptBox[
+"x","3"]," ","y"," ","z"}],"+",RowBox[{FractionBox["1","3"]," ","x"," ",SuperscriptBox[
+"y","3"]," ","z"}],"+",RowBox[{FractionBox["1","3"]," ","x"," ","y"," ",SuperscriptBox[
+"z","3"]}]}],StandardForm],"Output",ExpressionUUID -> "c0cfdc09-c6b2-487a-8429-f6761a773df4",
+CellLabel -> "Out[11]= "]},Open],ExpressionUUID -> "104208cd-96dc-48a0-8834-b05fe4f97bd7"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{SubsuperscriptBox["\[Integral]",RowBox[{"-","1"}],"1"],RowBox[
+{SubsuperscriptBox["\[Integral]",RowBox[{"-","2"}],"x"],RowBox[{RowBox[{"(",RowBox[
+{RowBox[{"x"," ",RowBox[{"Sin","[",SuperscriptBox["y","2"],"]"}]}],"+",RowBox[{"y"," ",RowBox[
+{"Cos","[",SuperscriptBox["x","2"],"]"}]}]}],")"}],RowBox[{"\[DifferentialD]","y"}]," ",RowBox[
+{"\[DifferentialD]","x"}]}]}]}]],"Input",ExpressionUUID -> "8b5e258d-03a1-43db-9870-eac8585d0511",
+CellLabel -> "In[16]:= "],Cell[
+BoxData[RowBox[{FractionBox["1","4"]," ",RowBox[{"(",RowBox[
+{RowBox[{"2"," ",RowBox[{"Cos","[","1","]"}]}],"+",RowBox[{SqrtBox[RowBox[{"2"," ","\[Pi]"}]]," ",RowBox[
+{"(",RowBox[{RowBox[{RowBox[{"-","9"}]," ",RowBox[{"FresnelC","[",SqrtBox[FractionBox[
+"2","\[Pi]"]],"]"}]}],"+",RowBox[{"FresnelS","[",SqrtBox[FractionBox["2","\[Pi]"]],"]"}]}],")"}]}],"+",RowBox[
+{"2"," ",RowBox[{"Sin","[","1","]"}]}]}],")"}]}],StandardForm],"Output",ExpressionUUID -> "2307680f-9e79-4b92-a340-12ceb11cbda0",
+CellLabel -> "Out[16]= "]},Open],ExpressionUUID -> "5e276703-efaa-452b-8ccc-866d2dba340a"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"N","[",RowBox[{"%",","," ","5"}],"]"}]],"Input",ExpressionUUID -> "23870852-7c2d-4a38-88a3-fdb64917eda7",
+CellLabel -> "In[17]:= "],Cell[
+BoxData[RowBox[{"-","3.2243382739804691253`5."}],
+StandardForm],"Output",ExpressionUUID -> "93402bb0-8293-4fb5-b725-63e32b7f8707",CellLabel -> "Out[17]= "]},
+Open],ExpressionUUID -> "c80085f1-c7cc-4582-a9e8-743f965f179c"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "11.3 for Wolfram Cloud 1.49 (December 12, 2018)"]

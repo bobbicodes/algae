@@ -1,0 +1,122 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframEngine 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       160,          7]
+NotebookDataLength[      3720,        114]
+NotebookOptionsPosition[      2926,         90]
+NotebookOutlinePosition[      3287,        106]
+CellTagsIndexPosition[      3244,        103]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Convert linear equations to standard form", "Subsubsection",
+ CellChangeTimes->{
+  3.758403406990012*^9, {3.758502125405717*^9, 
+   3.7585021450443583`*^9}},ExpressionUUID->"30e10b8a-a823-447e-b84b-\
+f987bc845dda"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"eq", "=", 
+  RowBox[{
+   RowBox[{"y", "+", "4"}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"-", "6"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "+", "6"}], ")"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.758502236934638*^9, 3.75850225441247*^9}, {
+  3.758502473160551*^9, 3.758502488766608*^9}, {3.758502643683988*^9, 
+  3.758502656017274*^9}, {3.758502837422171*^9, 3.7585028515642633`*^9}, {
+  3.758502951683981*^9, 3.7585029623698072`*^9}},
+ CellLabel->
+  "In[153]:=",ExpressionUUID->"7718237b-4194-4b90-ac4f-182e448bdc8d"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"4", "+", "y"}], "\[Equal]", 
+  RowBox[{
+   RowBox[{"-", "6"}], " ", 
+   RowBox[{"(", 
+    RowBox[{"6", "+", "x"}], ")"}]}]}]], "Output",
+ CellChangeTimes->{3.758502259092579*^9, 3.758502489884053*^9, 
+  3.758502658170329*^9, 3.758502852839506*^9, 3.758502963498147*^9},
+ CellLabel->
+  "Out[153]=",ExpressionUUID->"7318af2e-097c-4dd0-9195-e01a9e634377"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SubtractSides", "[", 
+  RowBox[{
+   RowBox[{"AddSides", "[", 
+    RowBox[{
+     RowBox[{"Expand", "[", "eq", "]"}], ",", 
+     RowBox[{"6", "x"}]}], "]"}], ",", "4"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7585022739727907`*^9, 3.758502286420718*^9}, {
+  3.758502501639477*^9, 3.7585025223909607`*^9}, {3.7585025851983*^9, 
+  3.758502596956026*^9}, {3.7585026822467747`*^9, 3.758502763827961*^9}, {
+  3.758502859569742*^9, 3.758502893379418*^9}, {3.758502972105564*^9, 
+  3.7585030105520763`*^9}},
+ CellLabel->
+  "In[156]:=",ExpressionUUID->"a0e1c44b-aecc-4998-a775-e076f71ba9b0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"6", " ", "x"}], "+", "y"}], "\[Equal]", 
+  RowBox[{"-", "40"}]}]], "Output",
+ CellChangeTimes->{
+  3.7585022874771833`*^9, {3.758502512399354*^9, 3.758502523485882*^9}, 
+   3.758502598224609*^9, 3.758502693226121*^9, {3.7585027265217752`*^9, 
+   3.758502764368229*^9}, {3.758502864705714*^9, 3.758502894321764*^9}, {
+   3.7585029733311653`*^9, 3.758503011425734*^9}},
+ CellLabel->
+  "Out[156]=",ExpressionUUID->"8a086b3e-c696-4610-98f6-33ec3a55f43c"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{804, 720},
+WindowMargins->{{4, Automatic}, {Automatic, 36}},
+Magnification:>3. Inherited,
+FrontEndVersion->"11.3 for Linux ARM (32-bit) (May 23, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[582, 22, 220, 4, 285, "Subsubsection",ExpressionUUID->"30e10b8a-a823-447e-b84b-f987bc845dda"],
+Cell[CellGroupData[{
+Cell[827, 30, 539, 13, 128, "Input",ExpressionUUID->"7718237b-4194-4b90-ac4f-182e448bdc8d"],
+Cell[1369, 45, 387, 10, 140, "Output",ExpressionUUID->"7318af2e-097c-4dd0-9195-e01a9e634377"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1793, 60, 605, 13, 255, "Input",ExpressionUUID->"a0e1c44b-aecc-4998-a775-e076f71ba9b0"],
+Cell[2401, 75, 497, 11, 140, "Output",ExpressionUUID->"8a086b3e-c696-4610-98f6-33ec3a55f43c"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

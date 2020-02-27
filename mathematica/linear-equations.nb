@@ -1,0 +1,242 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframEngine 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       160,          7]
+NotebookDataLength[      8205,        234]
+NotebookOptionsPosition[      5874,        190]
+NotebookOutlinePosition[      6234,        206]
+CellTagsIndexPosition[      6191,        203]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Linear equations word problems", "Subsubsection",
+ CellChangeTimes->{
+  3.75910108683173*^9},ExpressionUUID->"2509fb6e-3187-420d-9e69-afcfca64dfaf"],
+
+Cell["A big ship drops its anchor.", "Text",
+ CellChangeTimes->{{3.759102967041831*^9, 
+  3.759102981260127*^9}},ExpressionUUID->"17f99e61-ccff-4d41-b278-\
+0edcc9766686"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"e", "[", "t_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", "2.4"}], "t"}], "+", "75"}]}]], "Input",
+ CellChangeTimes->{{3.759102985714368*^9, 3.75910300127684*^9}, {
+  3.7591030359378033`*^9, 3.759103038589596*^9}},
+ CellLabel->
+  "In[308]:=",ExpressionUUID->"d613a9fd-aab1-4f11-8d87-d4fad5e49f07"],
+
+Cell["\<\
+e(t) models the anchor's elevation relative to the water's surface (in \
+meters) as a function of time t (in seconds).
+
+From how many meters (above the water) was the anchor dropped?\
+\>", "Text",
+ CellChangeTimes->{{3.759102967041831*^9, 3.759102976423531*^9}, {
+  3.759103043013907*^9, 
+  3.759103069829129*^9}},ExpressionUUID->"7b8ba0d2-9cd2-493f-8f03-\
+40c14694010d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e", "[", "0", "]"}]], "Input",
+ CellChangeTimes->{{3.759103077919372*^9, 3.7591030799009523`*^9}},
+ CellLabel->
+  "In[309]:=",ExpressionUUID->"df22570b-4aa0-4847-96b5-5d8d5dbf9d2a"],
+
+Cell[BoxData["75.`"], "Output",
+ CellChangeTimes->{3.759103080676989*^9},
+ CellLabel->
+  "Out[309]=",ExpressionUUID->"12d4eadd-537a-42c9-9391-6187ce333328"]
+}, Open  ]],
+
+Cell["\<\
+Ever since Renata moved to her new home, she\[CloseCurlyQuote]s been keeping \
+track of the height of the tree outside her window.\
+\>", "Text",
+ CellChangeTimes->{{3.759102662263034*^9, 
+  3.759102688081271*^9}},ExpressionUUID->"9f84e7da-64f6-446b-b5cd-\
+f4aa81e4dbba"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"H", "[", "t_", "]"}], ":=", 
+  RowBox[{"210", "+", 
+   RowBox[{"33", "t"}]}]}]], "Input",
+ CellChangeTimes->{{3.7591026918058434`*^9, 3.759102702657055*^9}},
+ CellLabel->
+  "In[303]:=",ExpressionUUID->"045af586-e658-4286-921a-cddf928dfe29"],
+
+Cell["\<\
+H(t) models the height of the tree (in centimeters), t years since Renata \
+moved in.
+
+How many centimeters does the tree grow per year?\
+\>", "Text",
+ CellChangeTimes->{{3.759102662263034*^9, 
+  3.759102739610208*^9}},ExpressionUUID->"50067e12-0969-4bb1-b436-\
+e03d448fca7a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"H", "[", "2", "]"}], "-", 
+  RowBox[{"H", "[", "1", "]"}]}]], "Input",
+ CellChangeTimes->{{3.759102758848382*^9, 3.75910280770931*^9}},
+ CellLabel->
+  "In[306]:=",ExpressionUUID->"771ddd30-5327-4f8b-be48-2fc4a42408dc"],
+
+Cell[BoxData["33"], "Output",
+ CellChangeTimes->{{3.7591027654167233`*^9, 3.759102808351969*^9}},
+ CellLabel->
+  "Out[306]=",ExpressionUUID->"97b75804-f68c-4079-9b39-4a2b56ad465f"]
+}, Open  ]],
+
+Cell["\<\
+Anumeha mows lawns. She charges an initial fee and a constant fee for each \
+hour of work.
+
+F(t) models Anumeha\[CloseCurlyQuote]s fee (in dollars) for working t hours.\
+\>", "Text",
+ CellChangeTimes->{{3.759101108905509*^9, 
+  3.759101151921928*^9}},ExpressionUUID->"5f7113fb-4cfa-4ac8-8b6a-\
+8077325e3c81"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"F", "[", "t_", "]"}], ":=", 
+  RowBox[{"6", "+", 
+   RowBox[{"12", "t"}]}]}]], "Input",
+ CellChangeTimes->{{3.759101156821292*^9, 3.759101172075027*^9}},
+ CellLabel->
+  "In[297]:=",ExpressionUUID->"562cea83-034c-4354-b7a0-5b5cc036779a"],
+
+Cell["What is Anumeha\[CloseCurlyQuote]s initial fee?", "Text",
+ CellChangeTimes->{
+  3.759101213637542*^9},ExpressionUUID->"06332f57-1aa5-4774-a227-\
+355810025f6e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"F", "[", "0", "]"}]], "Input",
+ CellChangeTimes->{{3.7591011883811827`*^9, 3.759101190887135*^9}},
+ CellLabel->
+  "In[298]:=",ExpressionUUID->"354a57a7-9faf-4425-8750-6d98ee39a66b"],
+
+Cell[BoxData["6"], "Output",
+ CellChangeTimes->{3.759101192140819*^9, 3.759101230368376*^9},
+ CellLabel->
+  "Out[298]=",ExpressionUUID->"f114d611-6756-4de2-822d-987b1083f4ab"]
+}, Open  ]],
+
+Cell["\<\
+A paintball court charges an initial entrance fee plus a fixed price per ball.
+
+P(n) models the total price (in dollars) as a function of the number of balls \
+used n.\
+\>", "Text",
+ CellChangeTimes->{{3.7591012868155937`*^9, 3.759101300644629*^9}, {
+  3.759101379229879*^9, 
+  3.759101398720244*^9}},ExpressionUUID->"878c4546-391f-4608-92b0-\
+da78059af8d2"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"P", "[", "n_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"0.80", "n"}], "+", "5.50"}]}]], "Input",
+ CellChangeTimes->{{3.759101404035424*^9, 3.759101424019047*^9}},
+ CellLabel->
+  "In[299]:=",ExpressionUUID->"34dd2c73-675d-483d-8334-0e7c0f66a772"],
+
+Cell["How much do 10 balls cost?", "Text",
+ CellChangeTimes->{{3.7591012868155937`*^9, 3.759101300644629*^9}, {
+   3.759101379229879*^9, 3.759101395197221*^9}, 
+   3.759101430773728*^9},ExpressionUUID->"30af00ed-67fd-4673-99cb-\
+fb069d6ab74e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"0.80", 
+  RowBox[{"(", "10", ")"}]}]], "Input",
+ CellChangeTimes->{{3.7591016098762913`*^9, 3.759101623364547*^9}},
+ CellLabel->
+  "In[301]:=",ExpressionUUID->"0ad81801-8cfc-4fd8-aade-a76aec8d5252"],
+
+Cell[BoxData["8.`"], "Output",
+ CellChangeTimes->{3.75910162451544*^9},
+ CellLabel->
+  "Out[301]=",ExpressionUUID->"f9687cf9-12f4-4e33-aa6f-0091534f39b2"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{800, 683},
+WindowMargins->{{2, Automatic}, {1, Automatic}},
+Magnification:>2. Inherited,
+FrontEndVersion->"11.3 for Linux ARM (32-bit) (May 23, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[582, 22, 154, 2, 89, "Subsubsection",ExpressionUUID->"2509fb6e-3187-420d-9e69-afcfca64dfaf"],
+Cell[739, 26, 170, 3, 69, "Text",ExpressionUUID->"17f99e61-ccff-4d41-b278-0edcc9766686"],
+Cell[912, 31, 343, 9, 86, "Input",ExpressionUUID->"d613a9fd-aab1-4f11-8d87-d4fad5e49f07"],
+Cell[1258, 42, 381, 9, 294, "Text",ExpressionUUID->"7b8ba0d2-9cd2-493f-8f03-40c14694010d"],
+Cell[CellGroupData[{
+Cell[1664, 55, 205, 4, 86, "Input",ExpressionUUID->"df22570b-4aa0-4847-96b5-5d8d5dbf9d2a"],
+Cell[1872, 61, 156, 3, 94, "Output",ExpressionUUID->"12d4eadd-537a-42c9-9391-6187ce333328"]
+}, Open  ]],
+Cell[2043, 67, 280, 6, 159, "Text",ExpressionUUID->"9f84e7da-64f6-446b-b5cd-f4aa81e4dbba"],
+Cell[2326, 75, 275, 7, 86, "Input",ExpressionUUID->"045af586-e658-4286-921a-cddf928dfe29"],
+Cell[2604, 84, 286, 8, 249, "Text",ExpressionUUID->"50067e12-0969-4bb1-b436-e03d448fca7a"],
+Cell[CellGroupData[{
+Cell[2915, 96, 253, 6, 86, "Input",ExpressionUUID->"771ddd30-5327-4f8b-be48-2fc4a42408dc"],
+Cell[3171, 104, 180, 3, 94, "Output",ExpressionUUID->"97b75804-f68c-4079-9b39-4a2b56ad465f"]
+}, Open  ]],
+Cell[3366, 110, 318, 8, 249, "Text",ExpressionUUID->"5f7113fb-4cfa-4ac8-8b6a-8077325e3c81"],
+Cell[3687, 120, 271, 7, 86, "Input",ExpressionUUID->"562cea83-034c-4354-b7a0-5b5cc036779a"],
+Cell[3961, 129, 165, 3, 69, "Text",ExpressionUUID->"06332f57-1aa5-4774-a227-355810025f6e"],
+Cell[CellGroupData[{
+Cell[4151, 136, 205, 4, 86, "Input",ExpressionUUID->"354a57a7-9faf-4425-8750-6d98ee39a66b"],
+Cell[4359, 142, 175, 3, 94, "Output",ExpressionUUID->"f114d611-6756-4de2-822d-987b1083f4ab"]
+}, Open  ]],
+Cell[4549, 148, 368, 9, 249, "Text",ExpressionUUID->"878c4546-391f-4608-92b0-da78059af8d2"],
+Cell[4920, 159, 276, 7, 86, "Input",ExpressionUUID->"34dd2c73-675d-483d-8334-0e7c0f66a772"],
+Cell[5199, 168, 243, 4, 69, "Text",ExpressionUUID->"30af00ed-67fd-4673-99cb-fb069d6ab74e"],
+Cell[CellGroupData[{
+Cell[5467, 176, 222, 5, 86, "Input",ExpressionUUID->"0ad81801-8cfc-4fd8-aade-a76aec8d5252"],
+Cell[5692, 183, 154, 3, 94, "Output",ExpressionUUID->"f9687cf9-12f4-4e33-aa6f-0091534f39b2"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

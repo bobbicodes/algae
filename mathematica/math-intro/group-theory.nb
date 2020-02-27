@@ -1,0 +1,108 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+BoxData[RowBox[{"GroupElements","[",RowBox[{"SymmetricGroup","[","2","]"}],"]"}]],
+"Input",ExpressionUUID -> "afb3df04-3d07-4114-908a-f4bb8ad1c559",CellLabel -> "In[30]:= "],Cell[
+BoxData[
+RowBox[{"{",RowBox[{RowBox[{"Cycles","[",RowBox[{"{","}"}],"]"}],",",RowBox[{"Cycles","[",RowBox[
+{"{",RowBox[{"{",RowBox[{"1",",","2"}],"}"}],"}"}],"]"}]}],"}"}],StandardForm],"Output",
+ExpressionUUID -> "7a809965-2a40-44ba-ad73-bfbfe4478b2f",CellLabel -> "Out[30]= "]},
+Open],ExpressionUUID -> "59c41cbc-d093-4eb1-a83c-974b133528f4"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"GroupGenerators","[",RowBox[{"SymmetricGroup","[","3","]"}],"]"}]],
+"Input",ExpressionUUID -> "1846602a-b3df-41c8-99ef-570655023cd2",CellLabel -> "In[31]:= "],Cell[
+BoxData[
+RowBox[{"{",RowBox[{RowBox[{"Cycles","[",RowBox[{"{",RowBox[{"{",RowBox[{"1",",","2"}],"}"}],"}"}],"]"}],",",RowBox[
+{"Cycles","[",RowBox[{"{",RowBox[{"{",RowBox[{"1",",","2",",","3"}],"}"}],"}"}],"]"}]}],"}"}],
+StandardForm],"Output",ExpressionUUID -> "1c8e8eea-d1c4-43d4-b369-c86f3a336b48",CellLabel -> "Out[31]= "]},
+Open],ExpressionUUID -> "be7fe431-1af1-424b-9eb7-7afe42677998"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"PermutationGroup","[",RowBox[{"{",RowBox[{RowBox[{"Cycles","[",RowBox[
+{"{",RowBox[{"{",RowBox[{"3",","," ","1",","," ","2"}],"}"}],"}"}],"]"}],","," ",RowBox[
+{"Cycles","[",RowBox[{"{",RowBox[{"{",RowBox[{"2",","," ","5",","," ","6"}],"}"}],"}"}],"]"}]}],"}"}],"]"}]],
+"Input",ExpressionUUID -> "d8d8c1d0-7d63-4b4b-adb4-540870ed555e",CellLabel -> "In[32]:= "],Cell[
+BoxData[
+RowBox[{"PermutationGroup","[",RowBox[{"{",RowBox[{RowBox[{"Cycles","[",RowBox[{"{",RowBox[
+{"{",RowBox[{"1",",","2",",","3"}],"}"}],"}"}],"]"}],",",RowBox[{"Cycles","[",RowBox[
+{"{",RowBox[{"{",RowBox[{"2",",","5",",","6"}],"}"}],"}"}],"]"}]}],"}"}],"]"}],StandardForm],
+"Output",ExpressionUUID -> "a8fad371-9b87-4e70-9cad-64724c0fa6ea",CellLabel -> "Out[32]= "]},
+Open],ExpressionUUID -> "05b2d9da-ddf6-4c65-80c0-05aeaaa9513c"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"GroupOrder","[","%","]"}]],"Input",ExpressionUUID -> "71f664ee-a655-4cfd-b719-8ba094de0a37",
+CellLabel -> "In[33]:= "],Cell[
+BoxData["60",StandardForm],"Output",ExpressionUUID -> "ccbe3e9a-5d17-4bb0-aa93-e8a0093d75d4",
+CellLabel -> "Out[33]= "]},Open],ExpressionUUID -> "ed5bf3d2-229d-460e-96ee-e47a8bf2387f"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"TableForm","[",RowBox[{RowBox[{"GroupMultiplicationTable","[",RowBox[
+{"DihedralGroup","[","2","]"}],"]"}],","," ","\n"," ",RowBox[{"TableHeadings"," ","->"," ","Automatic"}]}],"]"}]],
+"Input",ExpressionUUID -> "58e501bd-9d0e-4fb5-9699-42353ffa37a3",CellLabel -> "In[34]:= "],Cell[
+BoxData[
+TagBox[TagBox[GridBox[{{StyleBox["\[Null]",ShowStringCharacters -> False],"1","2","3","4"},{"1","1","2","3","4"},{"2","2","1","4","3"},{"3","3","4","1","2"},{"4","4","3","2","1"}},
+RowSpacings -> 1,ColumnSpacings -> 3,RowAlignments -> Baseline,ColumnAlignments -> Left,
+ColumnLines -> {1,False},RowLines -> {1,False},ColumnAlignments -> Left],{OutputFormsDump`HeadedRows,OutputFormsDump`HeadedColumns}],
+Function[BoxForm`e$,TableForm[BoxForm`e$,TableHeadings -> Automatic]]],StandardForm],
+"Output",ExpressionUUID -> "4ba74159-d924-431e-af44-0b193ec55632",CellLabel -> "Out[34]//TableForm= "]},
+Open],ExpressionUUID -> "d355c6d3-ebd0-49f2-8cbe-b16e0f2a79a3"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"CayleyGraph","[",RowBox[{"DihedralGroup","[","2","]"}],"]"}]],
+"Input",ExpressionUUID -> "5cb4b50f-6db3-4139-ae90-19e2eec3242b",CellLabel -> "In[35]:= "],Cell[
+BoxData[
+GraphicsBox[NamespaceBox["NetworkGraphics",DynamicModuleBox[{Set[Typeset`graph,HoldComplete[
+Graph[{1,2,3,4},{{{1,3},{1,2},{2,4},{2,1},{3,1},{3,4},{4,2},{4,3}},Null},{Properties -> {DirectedEdge[
+3,4] -> {Tooltip -> Cycles[{{3,4}}]},DirectedEdge[1,2] -> {Tooltip -> Cycles[{{3,4}}]},1 -> {Tooltip -> Cycles[
+{}]},2 -> {Tooltip -> Cycles[{{3,4}}]},3 -> {Tooltip -> Cycles[{{1,2}}]},DirectedEdge[
+4,3] -> {Tooltip -> Cycles[{{3,4}}]},4 -> {Tooltip -> Cycles[{{1,2},{3,4}}]},DirectedEdge[
+1,3] -> {Tooltip -> Cycles[{{1,2}}]},DirectedEdge[2,4] -> {Tooltip -> Cycles[{{1,2}}]},DirectedEdge[
+3,1] -> {Tooltip -> Cycles[{{1,2}}]},DirectedEdge[4,2] -> {Tooltip -> Cycles[{{1,2}}]},DirectedEdge[
+2,1] -> {Tooltip -> Cycles[{{3,4}}]}},EdgeStyle -> {DirectedEdge[4,2] -> {Hue[0]},DirectedEdge[
+3,4] -> {Hue[0.7]},DirectedEdge[2,1] -> {Hue[0.7]},DirectedEdge[1,3] -> {Hue[0]},DirectedEdge[
+1,2] -> {Hue[0.7]},DirectedEdge[4,3] -> {Hue[0.7]},DirectedEdge[2,4] -> {Hue[0]},DirectedEdge[
+3,1] -> {Hue[0]}}}]]]},TagBox[GraphicsGroupBox[GraphicsComplexBox[CompressedData[
+"1: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"],
+{{Arrowheads[Medium],Directive[Opacity[0.7],Hue[0.6,0.7,0.5]],TagBox[TooltipBox[StyleBox[
+ArrowBox[BezierCurveBox[{1,{0.5049694277708394,0.17942793049115008},2}],0.014223134787731323],
+{Hue[0.7]},StripOnInput -> False],RowBox[{"Cycles","[",RowBox[{"{",RowBox[{"{",RowBox[
+{"3",",","4"}],"}"}],"}"}],"]"}]],Function[Annotation[Slot[1],Cycles[{{3,4}}],"Tooltip"]]],TagBox[
+TooltipBox[StyleBox[ArrowBox[BezierCurveBox[{1,{-0.14888544980378654,0.5350886908087612},3}],
+0.014223134787731323],{Hue[0]},StripOnInput -> False],RowBox[{"Cycles","[",RowBox[
+{"{",RowBox[{"{",RowBox[{"1",",","2"}],"}"}],"}"}],"]"}]],Function[Annotation[Slot[
+1],Cycles[{{1,2}}],"Tooltip"]]],TagBox[TooltipBox[StyleBox[ArrowBox[BezierCurveBox[
+{2,{0.49512121778400237,-0.14948337552061855},1}],0.014223134787731323],{Hue[0.7]},
+StripOnInput -> False],RowBox[{"Cycles","[",RowBox[{"{",RowBox[{"{",RowBox[{"3",",","4"}],"}"}],"}"}],"]"}]],
+Function[Annotation[Slot[1],Cycles[{{3,4}}],"Tooltip"]]],TagBox[TooltipBox[StyleBox[
+ArrowBox[BezierCurveBox[{2,{0.8507816071249865,0.5044641036867835},4}],0.014223134787731323],
+{Hue[0]},StripOnInput -> False],RowBox[{"Cycles","[",RowBox[{"{",RowBox[{"{",RowBox[
+{"1",",","2"}],"}"}],"}"}],"]"}]],Function[Annotation[Slot[1],Cycles[{{1,2}}],"Tooltip"]]],TagBox[
+TooltipBox[StyleBox[ArrowBox[BezierCurveBox[{3,{0.1800128342768911,0.5248514700875225},1}],
+0.014223134787731323],{Hue[0]},StripOnInput -> False],RowBox[{"Cycles","[",RowBox[
+{"{",RowBox[{"{",RowBox[{"1",",","2"}],"}"}],"}"}],"]"}]],Function[Annotation[Slot[
+1],Cycles[{{1,2}}],"Tooltip"]]],TagBox[TooltipBox[StyleBox[ArrowBox[BezierCurveBox[
+{3,{0.535673223617879,1.178798949294307},4}],0.014223134787731323],{Hue[0.7]},StripOnInput -> False],
+RowBox[{"Cycles","[",RowBox[{"{",RowBox[{"{",RowBox[{"3",",","4"}],"}"}],"}"}],"]"}]],
+Function[Annotation[Slot[1],Cycles[{{3,4}}],"Tooltip"]]],TagBox[TooltipBox[StyleBox[
+ArrowBox[BezierCurveBox[{4,{1.1793589395913815,0.4946110589325834},2}],0.014223134787731323],
+{Hue[0]},StripOnInput -> False],RowBox[{"Cycles","[",RowBox[{"{",RowBox[{"{",RowBox[
+{"1",",","2"}],"}"}],"}"}],"]"}]],Function[Annotation[Slot[1],Cycles[{{1,2}}],"Tooltip"]]],TagBox[
+TooltipBox[StyleBox[ArrowBox[BezierCurveBox[{4,{0.5255040620167564,0.850271819250292},3}],
+0.014223134787731323],{Hue[0.7]},StripOnInput -> False],RowBox[{"Cycles","[",RowBox[
+{"{",RowBox[{"{",RowBox[{"3",",","4"}],"}"}],"}"}],"]"}]],Function[Annotation[Slot[
+1],Cycles[{{3,4}}],"Tooltip"]]]},{Directive[Hue[0.6,0.2,0.8],EdgeForm[Directive[GrayLevel[
+0],Opacity[0.7]]]],TagBox[TooltipBox[DiskBox[1,0.014223134787731323],RowBox[{"Cycles","[",RowBox[
+{"{","}"}],"]"}]],Function[Annotation[Slot[1],Cycles[{}],"Tooltip"]]],TagBox[TooltipBox[
+DiskBox[2,0.014223134787731323],RowBox[{"Cycles","[",RowBox[{"{",RowBox[{"{",RowBox[
+{"3",",","4"}],"}"}],"}"}],"]"}]],Function[Annotation[Slot[1],Cycles[{{3,4}}],"Tooltip"]]],TagBox[
+TooltipBox[DiskBox[3,0.014223134787731323],RowBox[{"Cycles","[",RowBox[{"{",RowBox[
+{"{",RowBox[{"1",",","2"}],"}"}],"}"}],"]"}]],Function[Annotation[Slot[1],Cycles[
+{{1,2}}],"Tooltip"]]],TagBox[TooltipBox[DiskBox[4,0.014223134787731323],RowBox[{"Cycles","[",RowBox[
+{"{",RowBox[{RowBox[{"{",RowBox[{"1",",","2"}],"}"}],",",RowBox[{"{",RowBox[{"3",",","4"}],"}"}]}],"}"}],"]"}]],
+Function[Annotation[Slot[1],Cycles[{{1,2},{3,4}}],"Tooltip"]]]}}]],MouseAppearanceTag[
+"NetworkGraphics"]],AllowKernelInitialization -> False]],FormatType -> TraditionalForm,
+FrameTicks -> None,DefaultBaseStyle -> {"NetworkGraphics",FrontEnd`GraphicsHighlightColor -> Hue[
+0.8,1.0,0.6]},ExpressionUUID -> "ec8fae61-1d5a-43a7-884b-14649c9d50e6"],StandardForm],
+"Output",ExpressionUUID -> "d1b139de-eea1-4523-841c-879fce4a3198",CellLabel -> "Out[35]= "]},
+Open],ExpressionUUID -> "cc59bc9e-9332-4f8b-be47-9a41ff422d46"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "11.3 for Wolfram Cloud 1.49 (December 12, 2018)"]

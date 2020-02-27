@@ -1,0 +1,70 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+BoxData[RowBox[{"TraditionalForm","[",RowBox[
+{"2","/","3"}],"]"}]],"Input",ExpressionUUID -> "c7cf7dcf-6fea-485c-a2c8-b277cafef384",
+CellLabel -> "In[10]:= "],Cell[
+BoxData[FormBox[FractionBox["2","3"],TraditionalForm],
+StandardForm],"Output",ExpressionUUID -> "48946b72-f0b6-4a04-b578-7dea40877bce",CellLabel -> "Out[10]//TraditionalForm= "]},
+Open],ExpressionUUID -> "8be11eea-4e19-43b4-b052-9c27e8f10cbc"],Cell[
+BoxData[""],
+"Input",ExpressionUUID -> "fe346ec4-4b0e-4046-b768-ef800ee17cc3"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"2","/","3"}]],"Input",ExpressionUUID -> "dfa24cb6-c619-4d07-b475-aca1945ad22e",
+CellLabel -> "In[11]:= "],Cell[
+BoxData[FractionBox["2","3"],StandardForm],"Output",
+ExpressionUUID -> "256eae1e-c0c6-405f-952f-2e145561d05a",CellLabel -> "Out[11]= "]},
+Open],ExpressionUUID -> "ab5ad16b-d280-4527-9548-ad2eefe970d6"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{RowBox[{"1","/","4"}]," ","+"," ",RowBox[{"1","/","3"}]}]],
+"Input",ExpressionUUID -> "2890dcf4-8eff-40c6-9442-2fc290c87bfe",CellLabel -> "In[12]:= "],Cell[
+BoxData[
+FractionBox["7","12"],StandardForm],"Output",ExpressionUUID -> "832f0fc7-d214-45bb-84bd-15ed8d6beed4",
+CellLabel -> "Out[12]= "]},Open],ExpressionUUID -> "f1e222ae-0e54-4c9a-9de6-2c41a1dd6f23"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"Together","[",RowBox[{RowBox[{"1","/","a"}]," ","+"," ",RowBox[
+{"1","/","b"}]}],"]"}]],"Input",ExpressionUUID -> "eb6b423a-7af7-4ba6-9fc8-f5ceeac03bc9",
+CellLabel -> "In[13]:= "],Cell[
+BoxData[FractionBox[RowBox[{"a","+","b"}],RowBox[
+{"a"," ","b"}]],StandardForm],"Output",ExpressionUUID -> "2998fd0e-c538-4ecd-9c23-51c213afc6f3",
+CellLabel -> "Out[13]= "]},Open],ExpressionUUID -> "7a084a00-81d8-4fcc-b7cb-173e18ca6997"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{".25"," ","+"," ",RowBox[{"1","/","3"}]}]],"Input",ExpressionUUID -> "9d0209a5-de50-48b4-aefa-cff7ce8886d9",
+CellLabel -> "In[14]:= "],Cell[
+BoxData["0.5833333333333333`",StandardForm],"Output",
+ExpressionUUID -> "2724629c-878b-4b5c-b9f8-0ab930760c57",CellLabel -> "Out[14]= "]},
+Open],ExpressionUUID -> "df0db2c4-26e9-4257-b4b7-01f8e898bc72"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"N","[",RowBox[{RowBox[{"1","/","4"}]," ","+"," ",RowBox[{"1","/","7"}]}],"]"}]],
+"Input",ExpressionUUID -> "83d331e4-6d54-4692-bd9d-087cab9a25b5",CellLabel -> "In[15]:= "],Cell[
+BoxData[
+"0.39285714285714285`",StandardForm],"Output",ExpressionUUID -> "1e550757-87a8-49e4-86f9-ec471c649832",
+CellLabel -> "Out[15]= "]},Open],ExpressionUUID -> "5642e2ac-3d69-4024-a77b-37932fd777f7"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"N","[",RowBox[{RowBox[{RowBox[{"1","/","4"}]," ","+"," ",RowBox[
+{"1","/","7"}]}],","," ","10"}],"]"}]],"Input",ExpressionUUID -> "1da35364-e9ac-4837-9c82-753082eb6dce",
+CellLabel -> "In[16]:= "],Cell[
+BoxData["0.39285714285714285714285714285714285714`10.",
+StandardForm],"Output",ExpressionUUID -> "064be69b-1eac-464f-9583-e3ecb3b1acdc",CellLabel -> "Out[16]= "]},
+Open],ExpressionUUID -> "0ce47fc9-eaef-49d7-9ced-abac0aaa7c23"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"ScientificForm","[","0.00123","]"}]],"Input",ExpressionUUID -> "ac92ced6-4e07-4819-961d-53678b263d44",
+CellLabel -> "In[17]:= "],Cell[
+BoxData[TagBox[InterpretationBox[RowBox[{"\"1.23\"","\[Times]",SuperscriptBox[
+"10","\"-3\""]}],0.00123,AutoDelete -> True],ScientificForm],StandardForm],"Output",
+ExpressionUUID -> "766d5976-f1e1-43ae-81cb-1f3bfe53002a",CellLabel -> "Out[17]//ScientificForm= "]},
+Open],ExpressionUUID -> "cec3699c-4995-4c22-88f9-92cac68d0148"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"N","[",RowBox[{"100"," !"}],"]"}]],"Input",ExpressionUUID -> "4b2f3c18-2291-4534-9c7a-ef483e1d7944",
+CellLabel -> "In[18]:= "],Cell[
+BoxData["9.332621544394415`*^157",StandardForm],"Output",
+ExpressionUUID -> "ffaa377c-3e2a-4084-9602-1f9b247e84cf",CellLabel -> "Out[18]= "]},
+Open],ExpressionUUID -> "892d73b7-332e-44cd-a07b-e31e49046271"]},StyleDefinitions -> "Default.nb",
+FrontEndVersion -> "11.3 for Wolfram Cloud 1.49 (December 12, 2018)"]

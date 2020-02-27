@@ -1,0 +1,128 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframEngine 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       160,          7]
+NotebookDataLength[      3943,        120]
+NotebookOptionsPosition[      2985,         96]
+NotebookOutlinePosition[      3345,        112]
+CellTagsIndexPosition[      3302,        109]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Equivalent systems of equations", "Subsubsection",
+ CellChangeTimes->{
+  3.758611912885203*^9},ExpressionUUID->"e87b25ff-27f3-40da-bc73-\
+830a57d26d6a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"6", "x"}], "-", 
+   RowBox[{"9", "y"}]}], "=", 
+  RowBox[{"-", "3"}]}]], "DisplayFormula",
+ CellChangeTimes->{{3.758635549260373*^9, 
+  3.758635556882519*^9}},ExpressionUUID->"b64150ca-f790-42d1-b058-\
+059cd9d972d9"],
+
+Cell["can be written as -3 times", "Text",
+ CellChangeTimes->{
+  3.758635529880336*^9, {3.7586355634468307`*^9, 3.758635596570294*^9}, {
+   3.758635628787447*^9, 3.758635657533168*^9}, 
+   3.758636203720442*^9},ExpressionUUID->"cf14550c-28b3-4e6d-9e66-\
+8e8613941c7e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", "2"}], "x"}], "+", 
+   RowBox[{"3", "y"}]}], "=", "1"}]], "DisplayFormula",
+ CellChangeTimes->{{3.7586356718908787`*^9, 
+  3.758635687050785*^9}},ExpressionUUID->"0d5abd10-2614-4608-b4da-\
+cd864ab733d1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Expand", "[", 
+  RowBox[{"MultiplySides", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "2"}], "x"}], "+", 
+      RowBox[{"2", "y"}]}], "\[Equal]", 
+     RowBox[{"-", "1"}]}], ",", 
+    RowBox[{"-", "7"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7586362352948427`*^9, 3.758636297374947*^9}, {
+   3.75863654067913*^9, 3.758636551166778*^9}, 3.758636628291336*^9},
+ CellLabel->
+  "In[349]:=",ExpressionUUID->"7d23e651-3d1d-4ef1-b525-0a672d733992"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"14", " ", "x"}], "-", 
+   RowBox[{"14", " ", "y"}]}], "\[Equal]", "7"}]], "Output",
+ CellChangeTimes->{{3.758636285417803*^9, 3.758636300866852*^9}, 
+   3.7586365522864943`*^9, 3.758636629545047*^9},
+ CellLabel->
+  "Out[349]=",ExpressionUUID->"29f6f469-fe8f-4d30-bf85-1a407fb6a51f"]
+}, Open  ]],
+
+Cell["\<\
+Systems of equations that have the same solution are called equivalent systems.
+Given a system of two equations, we can produce an equivalent system by \
+replacing one equation by the sum of the two equations, or by replacing an \
+equation by a multiple of itself.
+In contrast, we can be sure that two systems of equations are not equivalent \
+if we know that a solution of the one is not a solution of the other.\
+\>", "Text",
+ CellChangeTimes->{
+  3.758611994874951*^9},ExpressionUUID->"fbd5227c-e5e3-406b-87cf-\
+17c4afdf1a37"]
+}, Open  ]]
+},
+WindowSize->{808, 678},
+WindowMargins->{{2, Automatic}, {6, Automatic}},
+Magnification:>3. Inherited,
+FrontEndVersion->"11.3 for Linux ARM (32-bit) (May 23, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[582, 22, 158, 3, 209, "Subsubsection",ExpressionUUID->"e87b25ff-27f3-40da-bc73-830a57d26d6a"],
+Cell[743, 27, 263, 8, 78, "DisplayFormula",ExpressionUUID->"b64150ca-f790-42d1-b058-059cd9d972d9"],
+Cell[1009, 37, 268, 5, 103, "Text",ExpressionUUID->"cf14550c-28b3-4e6d-9e66-8e8613941c7e"],
+Cell[1280, 44, 267, 8, 78, "DisplayFormula",ExpressionUUID->"0d5abd10-2614-4608-b4da-cd864ab733d1"],
+Cell[CellGroupData[{
+Cell[1572, 56, 511, 14, 255, "Input",ExpressionUUID->"7d23e651-3d1d-4ef1-b525-0a672d733992"],
+Cell[2086, 72, 329, 8, 140, "Output",ExpressionUUID->"29f6f469-fe8f-4d30-bf85-1a407fb6a51f"]
+}, Open  ]],
+Cell[2430, 83, 539, 10, 1175, "Text",ExpressionUUID->"fbd5227c-e5e3-406b-87cf-17c4afdf1a37"]
+}, Open  ]]
+}
+]
+*)
+

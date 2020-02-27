@@ -1,0 +1,120 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframEngine 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       160,          7]
+NotebookDataLength[      3554,        110]
+NotebookOptionsPosition[      2804,         88]
+NotebookOutlinePosition[      3164,        104]
+CellTagsIndexPosition[      3121,        101]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"CloudDeploy", "[", 
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{"Sin", "[", "x", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "0", ",", "50"}], "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.757942453809613*^9, 3.757942464679742*^9}, 
+   3.757942933337431*^9},
+ CellLabel->"In[2]:=",ExpressionUUID->"cb7c2f04-c590-4961-8c98-f33d299e5b87"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"CloudObject", "[", 
+   TemplateBox[{
+    "\"https://www.wolframcloud.com/objects/ee948bda-d2e0-4632-b66e-\
+398f1263ee25\"",
+     "https://www.wolframcloud.com/objects/ee948bda-d2e0-4632-b66e-\
+398f1263ee25"},
+    "HyperlinkURL"], "]"}],
+  CloudObject[
+  "https://www.wolframcloud.com/objects/ee948bda-d2e0-4632-b66e-398f1263ee25"],
+  SelectWithContents->True]], "Output",
+ CellChangeTimes->{3.7579429386290703`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"34043cb6-41b8-433a-82d3-ee86cb9b87ba"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.757942528627355*^9, 
+  3.7579425356454782`*^9}},ExpressionUUID->"87609998-30f8-4b9a-b27c-\
+dc7f9bdd3c62"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CloudDeploy", "[", 
+  RowBox[{"Manipulate", "[", 
+   RowBox[{
+    RowBox[{"Plot", "[", 
+     RowBox[{
+      RowBox[{"Sin", "[", 
+       RowBox[{"f", " ", "x"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "0", ",", 
+        RowBox[{"2", " ", "Pi"}]}], "}"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"f", ",", "1", ",", "10"}], "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7579425406131268`*^9, 3.757942540621274*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"a28ba9ab-6842-4643-8233-ac882326b340"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"CloudObject", "[", 
+   TemplateBox[{
+    "\"https://www.wolframcloud.com/objects/90634c39-6aa7-423c-aa2a-\
+19da304a3f86\"",
+     "https://www.wolframcloud.com/objects/90634c39-6aa7-423c-aa2a-\
+19da304a3f86"},
+    "HyperlinkURL"], "]"}],
+  CloudObject[
+  "https://www.wolframcloud.com/objects/90634c39-6aa7-423c-aa2a-19da304a3f86"],
+  SelectWithContents->True]], "Output",
+ CellChangeTimes->{3.757942700022128*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"4e374878-ad54-4652-a5d6-5f47fb150df6"]
+}, Open  ]]
+},
+WindowSize->{726, 704},
+WindowMargins->{{Automatic, 3}, {0, Automatic}},
+Magnification:>2. Inherited,
+FrontEndVersion->"11.3 for Linux ARM (32-bit) (May 23, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[582, 22, 383, 9, 130, "Input",ExpressionUUID->"cb7c2f04-c590-4961-8c98-f33d299e5b87"],
+Cell[968, 33, 538, 13, 185, "Output",ExpressionUUID->"34043cb6-41b8-433a-82d3-ee86cb9b87ba"]
+}, Open  ]],
+Cell[1521, 49, 154, 3, 60, "Input",ExpressionUUID->"87609998-30f8-4b9a-b27c-dc7f9bdd3c62"],
+Cell[CellGroupData[{
+Cell[1700, 56, 549, 14, 216, "Input",ExpressionUUID->"a28ba9ab-6842-4643-8233-ac882326b340"],
+Cell[2252, 72, 536, 13, 185, "Output",ExpressionUUID->"4e374878-ad54-4652-a5d6-5f47fb150df6"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

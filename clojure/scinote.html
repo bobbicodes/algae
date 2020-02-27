@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Scientific notation</title>
+    <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css">
+    <script>
+    window.klipse_settings = {
+        selector: '.language-klipse',
+    };
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
+<body>
+<h1>
+<center>Scientific notation word problems</center>
+</h1>
+<h2>
+A boy band has released two albums. Their first album sold $5.9 \cdot 10^5$ copies. Their second album sold $1.3 \cdot 10^6$ copies.
+<br><br>
+How many total copies has the boy band sold?
+</h2>
+<pre><code class="language-klipse">
+(defn scinote [n]
+  (loop [n n  acc 0]
+     (if (< 10 n)
+          (recur (/ n 10) (inc acc))
+           (str n " x 10^" acc))))
+
+(defn sci-add [s1 e1 s2 e2]
+  (scinote (+ (* s1 (Math/pow 10 e1))
+                   (* s2 (Math/pow 10 e2)))))
+
+(sci-add 5.9 5 1.3 6)
+</code></pre>
+<h1>
+<center>Multiplying & dividing in scientific notation</center>
+</h1>
+<h2>
+Calculate quotient in scientific notation.
+$$\large{\dfrac{1.88 \times 10^6}{2000}} =\ ?$$
+$$\large{\dfrac{1.88 \times 10^6}{2 \times 10^{-3}}}$$
+$$\large{0.94 \times 10^{6 \,-\, -3}}$$
+$$\large{0.94 \times 10^{6 \,-\, -3}}$$
+$$\large{1.3 \times 10^{-2}}$$
+<br><br>
+Calculate product in scientific notation.
+$$\large{(1.3 \times 10^{-2}) \times (0.05) =\ ?}$$
+$$\large{(1.3 \times 10^{-2}) \times (5 \times {10^{-2}})}$$
+$$\large{18.8 \times {10^{2 \,+\, 3}}}$$
+$$\large{1.88 \times {10^{6}}}$$
+<br><br>
+Calculate quotient in scientific notation.
+$$\large{\dfrac{0.00003}{2 \times 10^{-5}}} =\ ?$$
+$$\large{\dfrac{3}{2}} \times {\dfrac{10^{-5}}{10^{-5}}}$$
+$$= 1.3 \times 10^{-4 \,-\, -2}$$
+$$= 1.3 \times 10^{-2}$$
+<br><br>
+Calculate product in scientific notation.
+$$\large{\left(8\times 10^{-3} \right) \times (0.0002) =\ ?}$$
+$$\large{(8 \times 2) \times ({10^{-3}} \times {10^{-4}})}$$
+$$\large{16 \times {10^{-3 \,+\, -4}}}$$
+$$\large{16 \times {10^{-7}}}$$
+$$\large{1.6 \times {10^{-6}}}$$
+<br><br>
+Calculate quotient in scientific notation.
+$$\large{\dfrac{0.00065}{5 \times 10^{-2}}} =\ ?$$
+$$\large{\dfrac{6.5}{5}} \times {\dfrac{10^{-4}}{10^{-2}}}$$
+$$= 1.3 \times 10^{-4 \,-\, -2}$$
+$$= 1.3 \times 10^{-2}$$
+<br><br>
+Calculate product in scientific notation.
+$$\large{\left(8.2\times 10^{-3} \right) \times \left(2.0\times 10^{2} \right) =\ ?}$$
+$$\large{(8.2 \times 2.0) \times ({10^{-3}} \times {10^{2}})}$$
+$$\large{16.4 \times {10^{-3 \,+\, 2}}}$$
+$$\large{1.64 \times {10^{0}}}$$
+<br><br>
+Calculate quotient in scientific notation.
+$$\large{\dfrac{1.72 \times 10^{0}}{4.0 \times 10^{-3}}} =\ ?$$
+$$\large{\dfrac{1.72}{4.0}} \times {\dfrac{10^{0}}{10^{-3}}}$$
+$$= 0.43 \times 10^{0 \,-\, -3}$$
+$$= 0.43 \times 10^{3}$$
+$$= 4.3 \times 10^2$$
+<br><br>
+Calculate product in scientific notation.
+$$\large{\left(3.0\times 10^{3} \right) \times \left(5.0\times 10^{1} \right) =\ ?}$$
+$$\large{(3.0 \times 5.0) \times ({10^{3}} \times {10^{1}})}$$
+$$\large{15 \times {10^{3 \,+\, 1}}}$$
+$$\large{1.5 \times {10^{5}}}$$
+<br><br>
+Calculate quotient in scientific notation.
+$$\large{\dfrac{3.8\times 10^{9}}{400}} =\ ?$$
+$$\large{\dfrac{3.8}{4.0}} \times {\dfrac{10^{9}}{10^{2}}}$$
+$$= {0.95} \times {10^{9 \,-\, 2}}$$
+$$= 0.95 \times 10^{7}$$
+$$= 9.5 \times 10^6$$
+<br><br>
+Calculate product in scientific notation.
+$$\large{\left(5.2\times 10^{-2} \right) \times \left(8.0\times 10^{-4} \right) =\ ?}$$
+$$\large{(5.2 \times 8.0) \times ({10^{-2}} \times {10^{-4}})}$$
+$$\large{41.6 \times {10^{-2 \,+\, -4}}}$$
+$$\large{41.6 \times {10^{-6}}}$$
+$$\large{4.16 \times {10^{-5}}}$$
+<br><br>
+Calculate quotient in scientific notation.
+$$\large{\dfrac{2.85\times 10^{6}}{30,000}} =\ ?$$
+Collect the significands and exponents.
+$$\large{\dfrac{2.85}{3.0}} \times {\dfrac{10^{6}}{10^{4}}}$$
+Then divide each term separately. When dividing exponents with the same base, subtract their powers.
+$$= {0.95} \times {10^{6 \,-\, 4}}$$
+$$= 0.95 \times 10^{2}$$
+$$= 9.5 \times 10^1$$
+<br><br>
+Calculate product using scientific notation.
+$$\large{\left(1.5\times 10^{0} \right) \times \left(2.0\times 10^{-5} \right) =\ ?}$$
+Collect significands and exponents:
+$$\large{(1.5 \times 2.0) \times ({10^{0}} \times {10^{-5}})}$$
+Multiply each term separately. When multiplying exponents with the same base, add the powers together.
+$$\large{3 \times {10^{0 \,+\, -5}}}$$
+$$\large{3 \times {10^{-5}}}$$
+<br><br>
+Calculate product using scientific notation.
+$$\large{\left(3.3\times 10^{-4} \right) \times \left(8.0\times 10^{0} \right) =\ ?}$$
+Collect the significands and exponents:
+$$\large{(3.3 \times 8.0) \times ({10^{-4}} \times {10^{0}})}$$
+Then multiply each term separately. When multiplying exponents with the same base, add the powers together.
+$$= 26.4 \times {10^{-4 \,+\, 0}}$$
+$$= 26.4 \times {10^{-4}}$$
+To write the answer correctly in scientific notation, the first number needs to be between 1 and 10. In this case, we need to move the decimal one position to the left without changing the value of our answer.
+<br><br>
+We can use the fact that $26.4$ is the same as $2.64 \times 10$ or $2.64 \times 10^{1}$.
+$$= 2.64 \times 10^{1} \times {10^{-4}}$$ 
+$$= 2.64 \times 10^1 + -4$$
+$$= 2.64\times 10^{-3}$$
+<br><br>
+Calculate quotient. Use scientific notation.
+$$\large{\dfrac{7.80\times 10^{7}}{1.0\times 10^{4}}} =\ ?$$
+
+Collect the significands and exponents.
+$$\large{\dfrac {{7.80} \times {10^{7}}} {{1.0} \times {10^{4}}} = {\dfrac{7.80}{1.0}} \times {\dfrac{10^{7}}{10^{4}}}}$$
+Then divide each term separately. When dividing exponents with the same base, subtract their powers.
+$$= {7.80} \times {10^{7 \,-\, 4}}$$
+$$= 7.80 \times 10^{3}$$
+<br><br>
+</h2>
+Next:
+<br>
+<a href="radicals.html">Radicals</a>
+<script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+</body>
+</html>

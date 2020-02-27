@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Systems of equations</title>
+    <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css">
+    <script>
+    window.klipse_settings = {
+        selector: '.language-klipse',
+    };
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
+<body>
+<h1>
+<center>Systems of equations with substitution</center>
+</h1>
+<h2>
+Solve the system of equations.
+$$\large{13x-6y = 22}$$
+$$\large{x=y+6}$$
+Represent the system of equations as a map, and substitute the value for $x$ given by the second equation into the first to solve for $y$:
+<pre><code class="language-klipse">
+(def eq1 {:l {:x 13 :y -6}
+          :r {:n 22}})
+
+(def eq2 {:l {:x 1}
+          :r {:y 1 :n 6}})
+
+(defn sub [m1 m2]
+  (if (= {:x 1} (:l m2))
+    (:r m2)
+    (if (= {:x 1} (:r m2))
+      (:l m2))))
+
+(assoc-in eq1 [:l]
+          (let [x-val (:x (:l eq1))]
+            {:y (+ (:y (dissoc (:l eq1) :x))
+                   (* x-val (:y (sub eq1 eq2))))
+             :n (* x-val (:n (sub eq1 eq2)))}))
+</code></pre>
+\begin{aligned} 13{x}-6y &= 22\\\\ 13\cdot({y+6})-6y&=22\\\\ 13y+78-6y&=22\\\\ 7y+78&=22 \end{aligned}
+Subtract $n$:
+<pre><code class="language-klipse">
+(def eq {:l {:y 7, :n 78}
+         :r {:n 22}})
+
+(defn subtract-n [equation]
+  (let [difference
+        (- (:n (:r equation))
+           (:n (:l equation)))]
+    {:l (dissoc (:l equation) :n)
+     :r difference}))
+
+(subtract-n eq)
+</code></pre>
+Solve for $y$:
+<pre><code class="language-klipse">
+(def eq {:l {:y 7}, :r -56})
+
+(defn solve [equation variable]
+  (let [val (/ (:r eq)
+     (variable (:l eq)))]
+    {:l :y :r val}))
+
+(solve eq :y)
+</code></pre>
+Since we now know that ${y}={-8}$, we can substitute this value in the second equation to solve for $x$:
+\begin{aligned} x &= {y}+6 \\\\ x&={-8}+6\\\\ x&=-2 \end{aligned}
+<pre><code class="language-klipse">
+(def eq1 {:l :x, :r {:y 1 :n 6}})
+(def eq2 {:l :y, :r -8})
+
+(defn solve [equation1 equation2 var]
+  (let [val (if (= var (:l equation2))
+              (:r equation2))]
+    {:l (:l equation1)
+     :r (+ (:n (:r equation1)) val)}))
+
+(solve eq1 eq2 :y)
+</code></pre>
+<br><br>
+Solve the system of equations.
+\begin{aligned} & -5x+2y = 9 \\\\ & y=7x \end{aligned}
+<pre><code class="language-klipse">
+(defn system [x y n y-val]
+  (str "x = " (/ n (+ x (* y-val y)))
+       ", y = " (* y-val (/ n (+ x (* y-val y))))))
+
+(system -5 2 9 7)
+</code></pre>
+</h2>
+<h1>
+<center>Systems of equations with elimination</center>
+</h1>
+<h2>
+Solve the system of equations.
+$$\large{-5x+13y = -7}$$
+$$\large{5x+4y=24}$$
+<pre><code class="language-klipse">
+(defn system [x1 y1 n1 x2 y2 n2]
+  (let [product {:x (+ x1 x2)
+                 :y (+ y1 y2)
+                 :n (+ n1 n2)}
+        x (:x product)
+        y (:y product)
+        n (:n product)]
+    (if (zero? x)
+      (let [y-val (/ n y)]
+        (str "x = " (/ (- n2 (* y-val y2)) x2)
+             ", y = " y-val))
+      (if (zero? y)
+        (let [x-val (/ n x)]
+          (str "x = " x-val
+               ", y = " (/ (- n2 (* x-val x2)) y2)))
+        (let [mul (if (int? (/ x2 (* -1 x1)))
+                    (/ x2 (* -1 x1))
+                    (/ y2 (* -1 y1)))]
+           (system (* mul x1) (* mul y1) (* mul n1) x2 y2 n2))))))
+
+(system -5 -3 9 4 -18 54)
+</code></pre>
+In the following case, we need to prepare the equations first so that variable has coefficients of the same size but opposite signs in each equation:
+\begin{aligned} &-2x+5y = 13 \\\\ &16x+3y=25 \end{aligned}
+<br><br>
+We know that we can replace one of the equations with the sum of the two equations and obtain an equivalent system that has the same solution.
+<br><br>
+If, by doing that, we obtain an equation with a single variable, we will be able to find the solution for that variable. This is called the elimination method.
+<br><br>
+The coefficients of the variable $x$ have opposite signs in the two equations. By adding the equations, we can eliminate $x$ as follows:
+$$−5x+13y=−7$$
+$$+ 5x+4y=24$$
+$$0+17y=17$$
+$$17y=17$$
+$$y=1$$
+Substitute this into one of the original equations and solve for $x$:
+\begin{aligned} 5x+4 y&=24\\\\ 5x+4\cdot{1}&=24\\\\ 5x+4& = 24\\\\ 5x&=20\\\\ x&=4 \end{aligned}
+</h2>
+<br><br>
+<h1>
+<center>Systems of equations</center>
+</h1>
+<h2>
+$$y=5x+2$$
+$$y=−x+8$$
+This function takes a slope and intercept, and returns 2 points on the line:
+<pre><code class="language-klipse">
+(defn s-i [s i]
+  (str "(0,"i "), " "(1," (+ i s)")"))
+
+(s-i 5 2)
+</code></pre>
+<pre><code class="language-klipse">
+(s-i -1 8)
+</code></pre>
+Or try this one:
+<pre><code class="language-klipse">
+(defn s-i [s i]
+  (str "(0,"i "), " "(-1," (- i s)")"))
+
+(s-i -3 -7)
+</code></pre>
+<br><br>
+Graph the system of equations.
+\begin{aligned} & 5x-10y=20 \\\\ & 2x+4y=-16 \end{aligned}
+Find $y$-intercept:
+<pre><code class="language-klipse">
+(defn eq [x y b]
+  [0 (/ b y)])
+
+(eq 5 -10 20)
+</code></pre>
+Find $x$-intercept:
+<pre><code class="language-klipse">
+(defn eq [x y b]
+  [(/ b x) 0])
+
+(eq 5 -10 20)
+</code></pre>
+Find the intercepts of the line given by first equation:
+\begin{aligned}5x-10y&=20\\\\ 5 \cdot 0-10y&=20\\\\-10y&=20\\\\y&=-2\end{aligned}
+​\begin{aligned}5x-10 y&=20\\\\5x-10\cdot 0&=20\\\\5x&=20\\\\x&=4\end{aligned}
+So the $y$-intercept of the line given by the first equation is $(0,-2)$ and its $x$-intercept is $(4,0)$.
+The $y$-intercept of the line given by the second equation is $(0,−4)$, and its $x$-intercept is $(−8,0)$.
+<br><br>
+Graph the system of equations.
+\begin{aligned} & y=\dfrac{1}{2}x+3 \\\\ & y=x+1 \end{aligned}
+We begin with the line given by the first equation, $y=\dfrac{1}{2}x+3$. We know the $y$-intercept is $(0,3)$, so this is one of our points. Since the slope of the line is $\dfrac{1}{2}$, we know that another point on the line is $(2,3+1)$, which is the point $(2,4)$.
+<br><br>
+In a similar manner, we will find that the line given by the second equation passes through $(0,1)$ and $(2,3)$.
+<br><br>
+When we graph the two lines, we can see that they intersect at $(4,5)$. Therefore, this is the solution of the system:
+\begin{aligned} &x=4 \\\\ &y=5 \end{aligned}
+<br><br>
+Given:
+<br>
+$$\qquad m \angle ABD \text{ is a straight angle.}$$
+$$\qquad m \angle ABC = 8x - 41^\circ$$
+$$\qquad m \angle CBD = 9x + 17^\circ$$
+Find $m\angle CBD$:
+$$\large{180=(8x-41)+(9x+17)}$$
+Simplify expression by adding terms:
+<pre><code class="language-klipse">
+(defn eq [a b c d]
+  [(+ a c) (+ b d)])
+
+(eq 8 -41 9 17)
+</code></pre>
+Solve for x:
+<pre><code class="language-klipse">
+(defn angle [x a b]
+  (filter #(= x (+ (* a %) b))
+    (range 100)))
+
+(angle 180 17 -24)
+</code></pre>
+<br><br>
+$$\large{90=(7x-9)+(4x+22)}$$
+$$\large{90=11x+13}$$
+$$\large{77=11x}$$
+$$\large{7=x}$$
+<br><br>
+$$\large{77=(9x+44)+(6x+3)}$$
+$$\large{77=15x+47}$$
+$$\large{30=15x}$$
+$$\large{2=x}$$
+<br><br>
+</h2>
+Next:
+<br>
+<a href="proportions.html">Proportions</a>
+<script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+</body>
+</html>

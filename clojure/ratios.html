@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ratios</title>
+    <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css">
+    <script>
+    window.klipse_settings = {
+        selector: '.language-klipse',
+    };
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
+<body>
+<h1>
+<center>Tax and tip word problems</center>
+</h1>
+<h2>
+Mia hired a moving company. The company charged $\$500$ for its services, and Mia gives the movers a $16\%$ tip.
+<br><br>
+How much does Mia tip the movers?
+<pre><code class="language-klipse">
+(defn amount-tip [price percent-tip]
+  (let [percent-as-decimal (/ percent-tip 100)]
+    (* price percent-as-decimal)))
+
+(amount-tip 500 16)
+</code></pre>
+<br><br>
+Mira has breakfast at a restaurant. She leaves a $20\%$ tip of $\$1.80$.
+<br><br>
+What is the price of Mira's breakfast, before tip?
+<pre><code class="language-klipse">
+(defn price-before-tip [price-tip percent-tip]
+  (let [percent-as-decimal (/ percent-tip 100)]
+    (/ price-tip percent-as-decimal)))
+
+(price-before-tip 1.80 20)
+</code></pre>
+<br><br>
+David is buying a cheese wheel priced at $\$650$ before tax. The store charges $8\%$ sales tax.
+<br><br>
+What is the total price, including tax, David pays for the cheese wheel?
+<pre><code class="language-klipse">
+(defn total-price [price-before percent-tax]
+  (let [percent-as-decimal (/ percent-tax 100)
+        amount-tax (* percent-as-decimal price-before)]
+    (+ price-before amount-tax)))
+    
+(total-price 650 8)
+</code></pre>
+</h2>
+<h1>
+<center>Equivalent percent expressions</center>
+</h1>
+<h2>
+Landen spent $L$ hours at the beach last weekend. Matéo spent $15\%$ fewer hours at the beach than Landen did.
+<br><br>
+The expressions $L(1-{0.15})$ and $L-{\dfrac{3}{20}}L$ each could represent how many hours Matéo spent at the beach last weekend.
+<br><br>
+Kat owns $15\%$ more figurines than she did last year. She purchased $F$ figurines this year.
+<br><br>
+The expressions $\dfrac{F}{0.15}$ and $\dfrac{100}{15}F$ each could represent how many figurines Kat owned last year.
+<br><br>
+Last Sunday, the average temperature was $8\%$ higher than the average temperature two Sundays ago. The average temperature two Sundays ago was $T$ degrees Celsius.
+<br><br>
+The expressions $1.08T$ and $\left(1+\dfrac{8}{100}\right)T$ each could represent the average temperature last Sunday.
+<br><br>
+Jun used $x$ milliliters, or $90\%$, of his favorite bottle of hot sauce.
+<br><br>
+The expressions $\dfrac{x}{0.9}$ and $\dfrac{10}{9}x$ each could represent the volume of a full bottle of Jun's favorite hot sauce.
+<br><br>
+After the outbreak of a mysterious disease, the average wait time at a hospital increased by $70\%$. Before the outbreak, the average wait time at the hospital was $m$ minutes.
+<br><br>
+The expressions $1.7m$ and $\dfrac{170}{100}m$ each could represent the average wait time, in minutes, after the outbreak.
+<br><br>
+On Monday, Florencia's hair was $h$ centimeters long. She got a haircut on Tuesday, so her hair was only $75\%$ of the length it was on Monday.
+<br><br>
+The expressions ${0.75} h$ and ${\dfrac{3}{4}} h$ each could represent how many centimeters long Florencia's hair was after the haircut.
+<br><br>
+Rob spent $25\%$ more time on his research project than he had planned. He spent an extra $h$ hours on the project.
+<br><br>
+The expressions $5h$ and $\left(\dfrac{h}{0.25}\right)1.25$ each could represent the number of hours Rob actually spent on the research project.
+<br><br>
+Bo is buying a board game that usually costs $B$ dollars. The game is on sale, and the price has been reduced by $18\%$.
+<br><br>
+The expressions $B-{0.18}B$ and $0.82B$ each could represent how much Bo pays for the game.
+</h2>
+<h2>
+After learning how to fly, Wendy reduced her daily commute time by $75\%$. Previously, her commute took $m$ minutes.
+<br><br>
+How can we represent Wendy's commute time after she learned how to fly?
+</h2>
+Before learning how to fly, Wendy spent ${m}$ minutes on her commute daily. After learning how to fly, she spends $75\%$ less time commuting.
+<br><br>
+So Wendy spends ${75\%\cdot m}$ fewer minutes commuting daily than she used to.
+<br><br>
+That means Wendy spends ${m}-{75\% \cdot m}$ minutes commuting.
+<br><br>
+Because $75\%$ means $75$ per hundred, we can write it in equivalent forms:
+$$\begin{aligned} 75\%&=\dfrac{75}{100}\\\\ &=\dfrac{3}{4}\\\\ &=0.75 \end{aligned}$$
+Equivalent ways of writing Wendy's commute time after she learned how to fly:
+$$\begin{aligned} m-{75\%} \cdot m&=m-{0.75}m\\\\ &=m(1-{0.75})\\\\ &=m(0.25)\\\\ &=0.25m \\\\ &=\dfrac{1}{4}m \end{aligned}$$
+<h2>
+The expressions $0.25m$ and $\dfrac{1}{4}m$ each could represent Wendy's commute time, in minutes, after she learned how to fly.
+<br><br>
+A caterpillar eats 1400% of its birth mass in one day. The caterpillar's birth mass is $m$ grams.
+<br><br>
+The expressions $14m$ and $\dfrac{1400}{100}m$ each could represent the amount of food, in grams, the caterpillar eats in one day.
+<br><br>
+Crispy Clover, a popular vegetarian restaurant, introduced a new menu that has 20% more dishes than the previous menu. The previous menu had $D$ dishes.
+<br><br>
+The expressions $D+\dfrac{1}{5}D$ and $1.2D$ each could represent the number of dishes on the new menu.
+<br><br>
+After Batman brought the Joker to justice, the crime rate in Arkham City decreased by 12%. Previously, the crime rate was $c$ incidents per 1000 people.
+<br><br>
+The expressions $0.88c$ and $\dfrac{22}{25}c$ each could represent the crime rate in Arkham City after Batman brought the Joker to justice.
+<br><br>
+A new soup recipe contains 33% less sodium per serving than the old soup recipe. The old soup recipe contained $x$ milligrams of sodium per serving.
+<br><br>
+The expressions $0.67x$ and $\left(1-\dfrac{33}{100}\right)x$ each could represent the amount of sodium per serving, in milligrams, in the new soup recipe.
+<br><br>
+While on vacation, Enzo sleeps 115% as long as he does while school is in session. He sleeps an average of $S$ hours per day while he is on vacation.
+<br><br>
+The expressions $\dfrac{S}{1.15}$ and $\dfrac{100}{115}S$ each could represent the number of hours Enzo sleeps on average while school is in session.
+<br><br>
+After reading 80% of her e-mails in her inbox, Danette still has $M$ unread e-mails.
+<br><br>
+Danette started with 100% of her e-mails. After reading 80% of her e-mails, she has ${M}$ unread e-mails remaining.
+<br><br>
+So, ${M}$ represents $100\%-80\%={20\%}$ of the total number of e-mails.
+<br><br>
+That means the total number of e-mails is $\dfrac{{M}}{{20\%}}\cdot100\%$.
+<br><br>
+Because 20% means 20 per hundred, we can write it in equivalent forms.
+$$\begin{aligned} 20\%&=\dfrac{20}{100}\\\\ &=\dfrac{1}{5}\\\\ &=0.2 \end{aligned}$$
+Let's find equivalent ways of writing the total number of e-mails.
+$$\begin{aligned} \dfrac{M}{{20\%}}\cdot 100\% &= \dfrac{M}{{0.2}}\cdot1 \\\\ &=\dfrac{M}{{1-0.8}} \\\\ &=\dfrac{M}{{\left(\dfrac{1}{5}\right)}} \\\\ &={5}M \end{aligned}$$
+<br><br>
+Eiko is wearing a magic ring that increases the power of her healing spell by 30%. Without the ring, her healing spell restores H health points.
+<br><br>
+The healing spell restores $30\%\cdot H$ more health points with the ring than without it.
+<br><br>
+That means the healing spell restores $30\%\cdot H+{H}$ health points with the ring.
+<br><br>
+Because 30% means 30 per hundred, we can write it in equivalent forms.
+$$\begin{aligned} 30\%&=\dfrac{30}{100}\\\\ &=\dfrac{3}{10}\\\\ &=0.3 \end{aligned}$$
+$$\begin{aligned} {30\%}\cdot H+H&={\dfrac{3}{10}}H+H\\\\ &=\left({\dfrac{3}{10}}+1\right)H\\\\ &=\left({\dfrac{30}{100}}+1\right)H\\\\ &=\dfrac{130}{100}H \end{aligned}$$
+<br><br>
+In March, Delphine's house had 40% more snowfall than in February. Delphine's house had $f$ centimeters of snowfall in February.
+<br><br>
+Delphine's house had ${f}$ centimeters of snowfall in February, and there were 40% more centimeters of snowfall in March.
+<br><br>
+So there were ${40\%\cdot f}$ more centimeters of snowfall in March than in February.
+<br><br>
+That means her house had a total of ${40\% \cdot f} + {f}$ centimeters of snowfall in March.
+<br><br>
+Because 40% means 40 per hundred, we can write it in equivalent forms.
+$$\begin{aligned} 40\%&=\dfrac{40}{100}\\\\ &=\dfrac{4}{10}\\\\ &=0.4 \end{aligned}$$
+Let's find equivalent ways of writing the amount of snowfall Delphine's house had in March.
+$$\begin{aligned} {40\%} \cdot f + f&={\dfrac{4}{10}}f+f\\\\ &= {0.4}f+f\\\\ &={0.4}f+1f\\\\ &=({0.4}+1)f\\\\ &=1.4f \end{aligned}$$
+</h2>
+<h1>
+<center>Part-part-whole ratios</center>
+</h1>
+<h2>
+Tara makes 30 cups of donut topping by mixing sugar and cinnamon. The ratio of sugar to cinnamon is 3:2.
+<br><br>
+How much sugar did Tara use in the donut topping?
+<br><br>
+The part to whole ratio of sugar to total is 3:5.
+<pre><code class="language-klipse">
+(defn ratio [part whole total]
+  (* part (/ total whole)))
+
+(ratio 3 5 30)
+</code></pre>
+<pre><code class="language-klipse">
+(defn gcd [a b]
+  (if (zero? b)
+    a
+    (recur b (mod a b))))
+
+(defn rat [p w]
+  [(/ p (gcd p w)) (/ w (gcd p w))])
+</code></pre>
+</h2>
+<br>
+<h1>
+<center>Other shit</center>
+</h1>
+
+Next:
+<br>
+<a href="proportions.html">Proportions</a>
+<script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+</body>
+</html>

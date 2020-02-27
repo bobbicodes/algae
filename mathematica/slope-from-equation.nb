@@ -1,0 +1,125 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframEngine 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       160,          7]
+NotebookDataLength[      3461,        117]
+NotebookOptionsPosition[      2478,         91]
+NotebookOutlinePosition[      2838,        107]
+CellTagsIndexPosition[      2795,        104]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Slope from equation", "Subsubsection",
+ CellChangeTimes->{
+  3.758503248487667*^9},ExpressionUUID->"a5a5e2cc-64d2-418b-9c68-\
+21f301ea28d1"],
+
+Cell["What is the slope of the line?", "Text",
+ CellChangeTimes->{
+  3.7585033267245197`*^9},ExpressionUUID->"2cc304bc-f2ad-4853-9b36-\
+0caafce48719"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"y", "-", "4"}], "=", 
+  RowBox[{
+   RowBox[{"-", "7"}], 
+   RowBox[{"(", 
+    RowBox[{"x", "-", "6"}], ")"}]}]}]], "DisplayFormula",
+ CellChangeTimes->{{3.758503339071519*^9, 
+  3.758503351347855*^9}},ExpressionUUID->"812ec331-5b44-4076-92c0-\
+ac7b6211ead1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"line", "=", 
+  RowBox[{
+   RowBox[{"y", "-", "4"}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"-", "7"}], 
+    RowBox[{"(", 
+     RowBox[{"x", "-", "6"}], ")"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.758503361740102*^9, 3.758503383790628*^9}},
+ CellLabel->
+  "In[157]:=",ExpressionUUID->"d20ff503-76ec-4ea6-9bec-fa03ad9652dc"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"-", "4"}], "+", "y"}], "\[Equal]", 
+  RowBox[{
+   RowBox[{"-", "7"}], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "6"}], "+", "x"}], ")"}]}]}]], "Output",
+ CellChangeTimes->{3.758503385029543*^9},
+ CellLabel->
+  "Out[157]=",ExpressionUUID->"1fc556fd-40e9-4e07-b537-7afc2e7095d2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Expand", "[", 
+  RowBox[{"AddSides", "[", 
+   RowBox[{"line", ",", "4"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.758503395795315*^9, 3.758503420261732*^9}},
+ CellLabel->
+  "In[159]:=",ExpressionUUID->"2fc154d7-f1e9-4f31-8296-19e0c988a520"],
+
+Cell[BoxData[
+ RowBox[{"y", "\[Equal]", 
+  RowBox[{"46", "-", 
+   RowBox[{"7", " ", "x"}]}]}]], "Output",
+ CellChangeTimes->{{3.758503410904978*^9, 3.758503421111034*^9}},
+ CellLabel->
+  "Out[159]=",ExpressionUUID->"c7408366-7ce5-4079-bf5d-0d4a3a401d3c"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{810, 678},
+WindowMargins->{{2, Automatic}, {5, Automatic}},
+Magnification:>3. Inherited,
+FrontEndVersion->"11.3 for Linux ARM (32-bit) (May 23, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[582, 22, 146, 3, 133, "Subsubsection",ExpressionUUID->"a5a5e2cc-64d2-418b-9c68-21f301ea28d1"],
+Cell[731, 27, 150, 3, 170, "Text",ExpressionUUID->"2cc304bc-f2ad-4853-9b36-0caafce48719"],
+Cell[884, 32, 293, 9, 78, "DisplayFormula",ExpressionUUID->"812ec331-5b44-4076-92c0-ac7b6211ead1"],
+Cell[CellGroupData[{
+Cell[1202, 45, 345, 10, 128, "Input",ExpressionUUID->"d20ff503-76ec-4ea6-9bec-fa03ad9652dc"],
+Cell[1550, 57, 336, 11, 140, "Output",ExpressionUUID->"1fc556fd-40e9-4e07-b537-7afc2e7095d2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1923, 73, 270, 6, 192, "Input",ExpressionUUID->"2fc154d7-f1e9-4f31-8296-19e0c988a520"],
+Cell[2196, 81, 254, 6, 140, "Output",ExpressionUUID->"c7408366-7ce5-4079-bf5d-0d4a3a401d3c"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

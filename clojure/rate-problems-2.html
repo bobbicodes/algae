@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Rate problems 2</title>
+    <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css">
+    <script>
+    window.klipse_settings = {
+        selector: '.language-klipse',
+    };
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
+<body>
+<h1>
+<center>Find average speed</center>
+</h1>
+<h2>
+<br>
+Ishaan traveled uphill for 12 minutes at 15 mph. He then traveled back home along the same path downhill at a speed of 30 mph.
+<br><br>
+<pre><code class="language-klipse">
+(defn speed [speed-uphill speed-downhill time-uphill]
+  (let [distance-uphill (/ (* speed-uphill time-uphill) 60)
+        total-distance (* 2 distance-uphill)
+        time-downhill (/ (* distance-uphill 60) speed-downhill)
+        total-time (+ time-uphill time-downhill)]
+    (/ (* 60 total-distance) total-time)))
+
+(speed 15 30 12)
+</code></pre>
+$$\text{average speed} = \dfrac{\text{total distance}}{\text{total time}}$$
+$$\text{distance uphill} = \text{distance downhill}$$
+$$\begin{aligned} \text{total distance} &= \text{distance uphill} + \text{distance downhill} \\ &= 2 \times \text{distance uphill} \end{aligned}$$
+$$\begin{aligned} \text{distance uphill} &= \text{speed uphill} \times \text{time uphill} \\ &= 6\text{ mph} \times 60\text{ minutes} \times \dfrac{1 \text{ hour}}{60 \text{ minutes}}\\ &= 6\text{ miles} \end{aligned}$$
+$$\text{total distance} = 12\text{ miles}$$
+$$\text{total time} = \text{time uphill} + \text{time downhill}$$
+$$\begin{aligned} \text{time downhill} &= \dfrac{\text{distance downhill}}{\text{speed downhill}} \\ &= \dfrac{6\text{ miles}}{12\text{ mph}} \times \dfrac{60 \text{ minutes}}{1 \text{ hour}}\\ &= 30\text{ minutes} \end{aligned}$$
+$$\begin{aligned} \text{total time} &= 60\text{ minutes} + 30\text{ minutes} \\ &= 90\text{ minutes} \end{aligned}$$
+$$\begin{aligned} \text{average speed} &= \dfrac{\text{total distance}}{\text{total time}} \\ &= \dfrac{12\text{ miles}} {90\text{ minutes}} \times \dfrac{60 \text{ minutes}}{1 \text{ hour}} \\ &= 8\text{ mph} \end{aligned}$$
+</h2>
+<h1>
+<center>Rate problems 2</center>
+</h1>
+<h2>
+It takes 36 minutes for 7 people to paint 4 walls.
+<br><br>
+How many minutes does it take 9 people to paint 7 walls?
+<br><br>
+First calculate how long it will take one person to paint one wall.
+<pre><code class="language-klipse">
+(defn paint [minutes people walls]
+  (* people (/ minutes walls)))
+
+(paint 36 7 4)
+</code></pre>
+Number of minutes for one person to paint 7 walls:
+<pre><code class="language-klipse">
+(defn walls [per-wall people walls]
+  (/ (* walls per-wall) people))
+
+(walls 63 9 7) 
+</code></pre>
+<br><br>
+</h2>
+<br>
+<h1>
+<center>Other shit</center>
+</h1>
+
+Next:
+<br>
+<a href="proportions.html">Proportions</a>
+<script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+</body>
+</html>

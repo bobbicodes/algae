@@ -1,0 +1,25 @@
+(+ 56 32)
+
+(defn gcd [a b]
+  (if (zero? b)
+      a
+      (recur b (mod a b))))
+(gcd 56 32)
+(+ (* 8 7) (* 8 4))
+(gcd 9 15)
+(+ 9 15)
+(+ (* 3 3) (* 3 5))
+(gcd 75 20)
+(/ 75 5)
+(gcd 6 30)
+(+ 10000000 9 1)
+(+ (* 5 10000)
+  (* 22 1000))
+(/ 313756 3)
+
+(defn sieve [s]
+  (cons (first s)
+    (lazy-seq (sieve (filter #(not= 0 (mod % (first s)))
+                             (rest s))))))
+(take 30 (sieve (iterate inc 2)))
+(/ 91 7)

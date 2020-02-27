@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Solving proportions</title>
+    <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css">
+    <script>
+    window.klipse_settings = {
+        selector: '.language-klipse',
+        selector_reagent: '.language-reagent',
+    };
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
+<body>
+<h1>
+<center>Solving proportions - "Rita's Pancakes"</center>
+</h1>
+<h2>
+    EDIT: I'm pretty sure this is wrong! (It just happens to work w/ this prob)
+    
+Chef Rita is cooking for a Sunday brunch.
+She knows that 22 pancakes can feed 8 people.
+She is wondering how many people (p) she can feed with 55 pancakes.
+She assumes each person eats the same quantity of pancakes.
+<br><br>
+How many people can Rita feed with 55 pancakes?
+<br><br>
+We're dealing with a proportional relationship, so each ratio of pancakes to people must be equivalent:
+<br>
+$$\dfrac{55\text{ pancakes}}{p \text{ people}} = \dfrac{22\text{ pancakes}}{8\text{ people}}$$
+<br>
+Live Clojure function:
+<pre><code class="language-klipse">
+(defn pancakes [num-cakes will-feed num-people]
+  (filter #(= (/ num-cakes %)
+            (/ will-feed num-people))
+        (range 100)))
+
+(pancakes 55 22 8)
+</code></pre>
+Solve by cross-multiplication:
+<br>
+$$\dfrac{55}{p } = \dfrac{22}{8}  \\\\$$
+Multiply both sides by 8:
+$$8\cdot\dfrac{55}{p } = \dfrac{22}{8} \cdot {8}$$
+$$8\cdot \dfrac{55}{p} = 22$$
+Multiply both sides by p:
+$$p \cdot 8\cdot \dfrac{55}{p} = 22 \cdot p$$
+$$8 \cdot 55 = 22 \cdot p$$
+$$440 = 22p$$
+Divide both sides by 22:
+$$p = \dfrac{440}{22}$$
+$$p=20$$
+Rita can serve 20 people with 55 pancakes.
+<br>
+</h2>
+Next:
+<br>
+<a href="intercepts.html">Intercepts from an equation</a>
+<script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+</body>
+</html>

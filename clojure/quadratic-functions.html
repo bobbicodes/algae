@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Quadratic functions</title>
+    <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css">
+    <script>
+    window.klipse_settings = {
+        selector: '.language-klipse',
+    };
+    </script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+  </head>
+  <body>
+    <h1><center>Quadratic functions</center></h1>
+<h2>Factored form:</h2>
+$\Large{f(x)=(x+2)(x-4)}$
+      <pre><code class="language-klipse">
+(defn root [[b c]]
+  (- (/ c b)))
+
+(defn roots [eq1 eq2]
+  [(root eq1) (root eq2)])
+
+(defn average [x y]
+  (/ (+ x y) 2))
+
+(defn solve-factored [[a b c] x]
+  (* a (+ x b) (+ x c)))
+
+(defn factored-form [[n1 n2 n3 :as eq]]
+  (let [roots (roots [1 n2] [1 n3])
+        vert-x (apply average roots)]
+    {:roots roots
+     :vertex [vert-x (solve-factored eq vert-x)]
+     :point2 [(inc vert-x) (solve-factored eq (inc vert-x))]}))
+
+(factored-form [1 2 -4])
+      </code></pre>
+<h2>Vertex form:</h2>
+$\Large{h(x)=(x+5)^2-12.25}$
+<pre><code class="language-klipse">
+(defn solve-vertex [[n1 n2 n3] x]
+  (+ (* n1 (* (+ x n2) (+ x n2))) n3))
+
+(defn vertex-form [[n1 n2 n3 :as eq]]
+  {:roots [(+ (- n2) (Math/sqrt (* n1 (- n3))))
+           (- (- n2) (Math/sqrt (* n1 (- n3))))]
+   :vertex [(- n2) n3]
+   :point2 [(inc (- n2)) (solve-vertex eq (inc (- n2)))]})
+
+(vertex-form [1 5 -12.25])
+</code></pre>
+<h2>Standard form:</h2>
+$\Large{g(x)=x^2+5x-14}$
+<pre><code class="language-klipse">
+(defn factors [n]
+  (for [x (into (range (- (Math/abs n)) 0)
+                (range 1 (inc (Math/abs n))))
+        :when (zero? (rem n x))]
+    [(int x) (int (/ n x))]))
+
+(defn zeros [[a b c]]
+  (map - (first (filter #(= b (apply + %))
+                        (factors c)))))
+
+(defn div-by-a [s]
+  (map #(/ % (first s)) s))
+
+(defn vert-x [[a b c]]
+  (- (/ b (* 2 a))))
+
+(defn solve-standard [[a b c] x]
+  (+ (* (* x x) a)
+     (* b x)
+     c))
+
+(defn vertex [[a b c :as eq]]
+  (let [x (vert-x eq)
+        y (solve-standard eq x)]
+    [x y]))
+
+(defn standard-form [[a b c]]
+  {:roots (zeros (div-by-a [a b c]))
+   :vertex (vertex [a b c])
+   :y-int [0 c]})
+
+(standard-form [1 5 -14])
+</code></pre>
+    <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+  </body>
+</html>

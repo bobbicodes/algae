@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Intercepts</title>
+    <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css">
+    <script>
+    window.klipse_settings = {
+        selector: '.language-klipse',
+    };
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
+<body>
+<h1>
+<center>Intercepts from an equation</center>
+</h1>
+<h2>
+Determine the intercepts of the line:
+$$y=-7x+3$$
+y-intercept:
+$$y=3$$
+x-intercept:
+$$7x+y=3$$
+$$7x=3-y$$
+$$x=\frac{3-y}7$$
+$$x=\frac37$$
+<br><br>
+Determine the intercepts of the line:
+$$4x-3y=17$$
+y-intercept:
+$$-3y=-4x+17$$
+$$y=\frac{-4x+17}{-3}$$
+$$y=-\frac{17}{3}$$
+x-intercept:
+$$4x=3y+17$$
+$$x=\frac{3y+17}{4}$$
+$$x=\frac{17}{4}$$
+<br><br>
+Determine the intercepts of the line:
+$$5x-9=-8y-3$$
+x-intercept:
+$$5x=-8y+6$$
+$$x=\frac{-8y+6}{5}$$
+$$x=\frac65$$
+y-intercept:
+$$5x-6=-8y$$
+$$\frac{5x-6}{-8}=y$$
+$$\frac34=y$$
+<br><br>
+Determine the intercepts of the line:
+$$y=8x-18$$
+y-intercept:
+$$y=8(0)-18$$
+$$y=-18$$
+x-intercept:
+$$0=8x-18$$
+$$18=8x$$
+$$\frac94=x$$
+<br>
+<br>
+Determine the intercepts of the line:
+<br>
+$$-6x+3y=-7$$
+x-intercept:
+$$-6x=-3y-7$$
+$$x=\frac{-3y-7}{-6}$$
+$$x=\frac{-3(0)-7}{-6}$$
+$$x=\frac{7}{6}$$
+y-intercept:
+$$3y=6x-7$$
+$$y=\frac{6x-7}3$$
+$$y=\frac{6(0)-7}3$$
+$$y=-\frac{7}3$$
+<br>
+Determine the intercepts of the line:
+<br>
+$$y-4=7(x-6)$$
+$$y-4=7x-42$$
+$$y=7x-38$$
+x-intercept:
+$$0=7x-38$$
+$$38=7x$$
+$$\frac{38}{7}=x$$
+y-intercept:
+$$y=7(0) - 38$$
+$$y=-38$$
+<br>
+Determine the intercepts of the line:
+<br>
+$$y=-9x - 14$$
+To find the x-intercept, substitute y=0 into the equation and solve for x:
+$$0=-9x - 14$$
+$$9x=-14$$
+$$x=-\frac{14}{9}$$
+<br>
+$$2x+5y=-6$$
+<pre><code class="language-klipse">
+(defn round [precision d]
+  (let [factor (Math/pow 10 precision)]
+    (/ (Math/round (* d factor)) factor)))
+
+; find y intercept:
+
+(loop [x 0 y -100]
+  (if (= (+ (* 2 x)
+            (* 5 y))
+         -6)
+      y
+ (recur x
+   (round 1 (+ y 0.1)))))
+</code></pre>
+Find x intercept:
+<pre><code class="language-klipse">
+(loop [x -100 y 0]
+  (if (= (+ (* 2 x)
+            (* 5 y))
+         -6)
+      x
+      (recur (round 1 (+ x 0.1))
+             y)))
+</code></pre>
+<br>
+</h2>
+Next:
+<br>
+<a href="slope.html">Slope</a>
+<script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+</body>
+</html>

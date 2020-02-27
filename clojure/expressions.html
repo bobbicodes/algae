@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Algebraic Expressions</title>
+    <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css">
+    <script>
+    window.klipse_settings = {
+        selector: '.language-klipse',
+        selector_reagent: '.language-reagent',
+    };
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
+<body>
+<h1>
+<center>Nested fractions</center>
+</h1>
+<h2>
+$$\dfrac{\left(\dfrac{3x}{y}\right)}{\left(\dfrac{2x}{7}\right)}$$
+<pre><code class="language-klipse">
+(def e
+  {:top {:top {:var1 "x"
+               :val 3}
+         :bottom {:var1 "y"
+                  :val 1}}
+   :bottom {:top {:var1 "x"
+                  :val 2}
+            :bottom {:val 7}}})
+
+(:top (:top e))
+</code></pre>
+First we need a generic function that will take 2 maps and multiply them together. This first example is $3x\times7$, which we want to compute to $21x$:
+<pre><code class="language-klipse">
+(def e1 {:var1 "x"
+         :val 3})
+(def e2 {:val 7})
+
+(defn multiply [m1 m2]
+  (assoc m1
+  :var2 (:var1 m2)
+  :val (* (:val m1)
+          (:val m2))))
+
+(multiply e1 e2)
+</code></pre>
+Then we have  $2x\times{y}$, which we want to compute to $2xy$:
+<pre><code class="language-klipse">
+(def e1 {:var1 "x"
+         :val 2})
+(def e2 {:var1 "y"
+         :val 1})
+
+(defn multiply [m1 m2]
+  (assoc m1
+  :var2 (:var1 m2)
+  :val (* (:val m1)
+          (:val m2))))
+
+(multiply e1 e2)
+</code></pre>
+Now we can use that to make a function to divide the fractions by multiplying the first one by the reciprocal of the other:
+<pre><code class="language-klipse">
+(def e
+  {:top {:top {:var1 "x"
+               :val 3}
+         :bottom {:var1 "y"
+                  :val 1}}
+   :bottom {:top {:var1 "x"
+                  :val 2}
+            :bottom {:val 7}}})
+
+(defn multiply [m1 m2]
+  (assoc m1
+    :var2 (:var1 m2)
+    :val (* (:val m1)
+            (:val m2))))
+
+(defn div-frac [m]
+  {:top (multiply (:bottom (:bottom m))
+                  (:top (:top m)))
+   :bottom (multiply (:top (:bottom m))
+                     (:bottom (:top m)))})
+
+(div-frac e)
+</code></pre>
+Now cancel terms:
+<pre><code class="language-klipse">
+(defn cancel [m]
+  (cond (= (:var1 (:top m))
+         (:var1 (:bottom m)))
+      {:top (dissoc (:top m) :var1)
+       :bottom (dissoc (:bottom m) :var1)}
+      (= (:var1 (:top m))
+         (:var2 (:bottom m)))
+      {:top (dissoc (:top m) :var1)
+       :bottom (dissoc (:bottom m) :var2)}
+      (= (:var2 (:top m))
+         (:var1 (:bottom m)))
+      {:top (dissoc (:top m) :var2)
+       :bottom (dissoc (:bottom m) :var1)}
+      (= (:var2 (:top m))
+         (:var2 (:bottom m)))
+      {:top (dissoc (:top m) :var2)
+       :bottom (dissoc (:bottom m) :var2)}
+      :else
+      m))
+
+(cancel (div-frac e))
+</code></pre>
+$$\qquad\dfrac{3x}{y}\div\dfrac{2x}{7}$$
+$$\qquad\dfrac{3x}{y}\times\dfrac{7}{2x}$$
+$$\qquad \dfrac{3x}{y}\times\dfrac{7}{2x}=\dfrac{21x}{2xy}$$
+$$\qquad \dfrac{21}{2y}$$
+Now for this one, we first need to deal with the denominator:
+$$\dfrac{\dfrac{1}{xy}}{\dfrac{1}{x}-\dfrac{1}{y}}$$
+Since $\dfrac{1}{x}={\dfrac{y}{xy}}$ and $\dfrac{1}{y}={\dfrac{x}{xy}}$ we can simplify the denominator, from this:
+$$\dfrac{1}{x}-\dfrac{1}{y}$$
+To this:
+$$\dfrac{y}{xy}-{\dfrac{x}{xy}}$$
+And then to this:
+$$\dfrac{y-x}{xy}$$
+Then we can divide and cancel:
+$$\dfrac{1}{xy}\div\dfrac{y-x}{xy}$$
+$$\dfrac{1}{xy}\times\dfrac{xy}{y-x}$$
+$$\dfrac{xy}{xy(y-x)}$$
+$$\dfrac{1}{y-x}$$
+</h2>
+Next:
+<br>
+<a href="proportions.html">Proportions</a>
+<script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+</body>
+</html>

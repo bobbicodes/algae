@@ -1,0 +1,46 @@
+(defn gcd [a b]
+  (if (zero? b)
+    a
+    (recur b (mod a b))))
+
+(defn abs [x]
+  (if (< x 0) (- x) x))
+
+(defn exp [x n]
+  (Math/pow x n))
+ 
+(defn calc-delta [A x n]
+  (/ (- (/ A (exp x (- n 1))) x) n))
+ 
+(defn nth-root
+  ([x n] (nth-root x n 0.5 1.0))
+  ([x n guess-prev guess-current]
+   (if (< (abs (- guess-prev guess-current)) 1e-6)
+     guess-current
+     (recur x n guess-current (+ guess-current (calc-delta x guess-current n))))))
+
+(defn sqrt [n]
+  (nth-root n 2))
+
+(defn cbrt [n]
+  (nth-root n 3))
+
+(def b 2)
+
+(exp (exp b 2) 1/9)
+(exp (exp b -1/9) 2)
+(exp (exp b 1/2) 9)
+(exp (exp b 1/9) 2)
+
+(/ (* 3 1/5)
+   (nth-root -96 5))
+(nth-root 49/81 2)
+(/ 7 9)
+(- -6 -5)
+(- -7 -13)
+(+ -11 -15)
+(+ 6 -8)
+(- 10 12)
+(+ -2 -2)
+(sqrt 121)
+(cbrt 1728)

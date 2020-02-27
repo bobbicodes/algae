@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Slope from graph</title>
+    <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css">
+    <script>
+    window.klipse_settings = {
+        selector: '.language-klipse',
+    };
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
+<body>
+<h1>
+<center>Slope from graph</center>
+</h1>
+<canvas id="myChart" width="400" height="400"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script>
+var x = new Chart(document.getElementById("myChart"), {
+   type: 'scatter',
+   data: {
+      datasets: [{
+         label: "stuff",
+         data: [{
+            x: -5,
+            y: -2
+         }, {
+            x: 4,
+            y: 4
+         }],
+      }]
+   },
+   options: {
+      responsive: true
+   }
+});
+</script>
+<h2>
+Going from the point on the left to the point on the right, the change in y is 2, and the change in x is 3.
+$$\text{Slope}=\dfrac{\text{rise}}{\text{run}}=\dfrac{\Delta y}{\Delta x}=\dfrac23$$
+The slope of the line is:
+$$\dfrac{2}{3}$$
+<br>
+<br>
+$$2x+5y=-6$$
+<pre><code class="language-klipse">
+(defn round [precision d]
+  (let [factor (Math/pow 10 precision)]
+    (/ (Math/round (* d factor)) factor)))
+
+; find y intercept:
+
+(loop [x 0 y -100]
+  (if (= (+ (* 2 x)
+            (* 5 y))
+         -6)
+      y
+ (recur x
+   (round 1 (+ y 0.1)))))
+</code></pre>
+Find x intercept:
+<pre><code class="language-klipse">
+(loop [x -100 y 0]
+  (if (= (+ (* 2 x)
+            (* 5 y))
+         -6)
+      x
+      (recur (round 1 (+ x 0.1))
+             y)))
+</code></pre>
+<br>
+</h2>
+Next:
+<br>
+<a href="radicals.html">Radicals</a>
+<script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+</body>
+</html>

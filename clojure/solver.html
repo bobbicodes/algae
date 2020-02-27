@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Systems of equations</title>
+    <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css">
+    <script>
+    window.klipse_settings = {
+        selector: '.language-klipse',
+    };
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
+<body>
+<h1>
+<center>Stupid solver (brute-force)</center>
+</h1>
+    <h2>
+    <pre><code class="language-klipse">
+(defn close-enough? [x y]
+  (> 0.004 (Math/abs (- x y))))
+
+(defn round [d]
+  (/ (Math/round (* d 100)) 100))
+
+(round (first (filter #(close-enough?
+  (* 2 (+ % 1)) 10)
+    (range -100 100 0.05))))
+  </code></pre>
+    </h2>
+<h1>
+<center>Systems of equations with substitution</center>
+</h1>
+<h2>
+Solve the system of equations.
+$$\large{12x-5y = -20}$$
+$$\large{y=-x+4}$$
+<pre><code class="language-klipse">
+(def eq1 {:l {:x 7 :y 10}
+          :r {:n 36}})
+
+(def eq2 {:l {:y 1}
+          :r {:x 2 :n 9}})
+
+(defn sub [m1 m2]
+  (cond (= {:x 1} (:l m2))
+        (let [val (:r m2)
+              x-co (:x (:l m1))
+              y-co (:y (:l m1))
+              mult-y (:y (assoc val :y
+                           (* x-co (:y val))))
+              mult-n (:n (assoc val :n
+                           (* x-co (:n val))))]
+          {:l {:y (+ mult-y
+                     y-co)
+               :n mult-n}
+           :r (:r m1)})
+        (= {:x 1} (:r m2))
+        (:l m2)
+        (= {:y 1} (:l m2))
+        (let [val (:r m2)
+              x-co (:x (:l m1))
+              y-co (:y (:l m1))
+              mult-x (:x (assoc val :x
+                           (* y-co (:x val))))
+              mult-n (:n (assoc val :n
+                           (* y-co (:n val))))]
+          {:l {:x (+ mult-x
+                     x-co)
+               :n mult-n}
+           :r (:r m1)})
+        (= {:y 1} (:r m2))
+        (:l m2)))
+
+(defn subtract-n [equation]
+  (let [difference
+        (- (:n (:r equation))
+           (:n (:l equation)))]
+    {:l (dissoc (:l equation) :n)
+     :r {:n difference}}))
+
+(let [eq (subtract-n (sub eq1 eq2))
+      y-div (:y (:l eq))
+      x-div (:x (:l eq))
+      n (:n (:r eq))]
+  (if (contains? (:l eq):x)
+    {:l {:x 1} :r {:n (/ n x-div)}}
+    {:l {:y 1} :r {:n (/ n y-div)}}))
+</code></pre>
+<pre><code class="language-klipse">
+(def eq1 {:l {:x 1}
+          :r {:y 2}})
+(def eq2 {:l {:y 1} :r {:n 5}})
+
+(defn solve [equation1 equation2]
+  (let [n1 (:n (:r equation1))
+        n2 (:n (:r equation2))
+        x1 (:x (:r equation1))
+        y1 (:y (:r equation1))]
+    (if (contains? (:l equation1) :x)
+      {:l (:l equation1)
+     :r {:n (+ (* y1 n2) n1)}}
+      {:l (:l equation1)
+     :r {:n (+ (* x1 n2) n1)}})))
+
+(solve eq1 eq2)
+</code></pre>
+</h2>
+Next:
+<br>
+<a href="proportions.html">Proportions</a>
+<script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+</body>
+</html>

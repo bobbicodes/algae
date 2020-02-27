@@ -1,0 +1,4 @@
+#!/bin/bash
+
+google-chrome -app=https://www.khanacademy.org/ &
+google-chrome -app=https://colab.research.google.com/ &

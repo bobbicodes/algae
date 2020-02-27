@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Equations</title>
+    <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css">
+    <script>
+    window.klipse_settings = {
+        selector: '.language-klipse',
+    };
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+</head>
+<body>
+<h1>
+<center>Equations with parentheses</center>
+</h1>
+<h2>
+Solve for $m$:
+<h1>
+$$\Large{3-2(9+2m)=m}$$
+<h2>
+Distribute:
+<pre><code class="language-klipse">
+(def equation
+  {:left-side
+   {:integer 3
+    :expression
+    {:coefficient -2
+     :terms {:integer 9
+             :m 2}}}
+   :right-side {:m 1}})
+
+(let [expression-left
+      (:expression (:left-side equation))
+      coefficient-left
+      (:coefficient expression-left)
+      multiplier
+      (:integer (:terms expression-left))]
+  [(+ (* coefficient-left multiplier)
+     (:integer (:left-side equation)))
+   (* coefficient-left
+      (:m (:terms expression-left)))])
+</code></pre>
+</h2>
+<script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
+</body>
+</html>

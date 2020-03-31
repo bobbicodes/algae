@@ -31,4 +31,6 @@
                                     (str "x^" n " ")))))))))
 (comment
   (print-poly (sub-poly [6 2 5] [5 -6 -11]))
-  (print-poly (sub-poly [-9 0 0 0 8] [-9 2 5 0 0])))
+  (print-poly (sub-poly [-9 0 0 0 8] [-9 2 5 0 0]))
+  (print-poly (sub-poly [-7 3 -6] [3 4 4]))
+  (print-poly (sub-poly [1 8 -9] [11 -4 7])))

@@ -370,7 +370,7 @@
   (vec (:term-list (sparse-to-dense (mul (dense-to-sparse (Poly. 'b poly1)) (dense-to-sparse (Poly. 'b poly2)))))))
 
 (comment
-  (mult-poly [1 8] [2 1 3 0]))
+  (mult-poly [1 0 0 0 9 0 0] [-1 0 0 0 9 0 0]))
 
 (defn zero-pad [poly1 poly2]
   (cond

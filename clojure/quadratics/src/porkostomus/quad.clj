@@ -19,6 +19,9 @@
   (let [sq (reduce * (perfect-squares (prime-factors sqrt)))]
     [sq (/ sqrt (* sq sq))]))
 
+(comment
+  (simplify-sqrt 36))
+
 (defn quadratic-rational [[a b c]]
   (let [discriminant (simplify-sqrt (- (* b b) (* 4 a c)))]
     [(/ (- b) (first discriminant))
@@ -43,4 +46,5 @@
 
 (comment
   (graph [-1 14 0])
-(quadratic-roots [1 6 7]))
+(quadratic-roots [1 6 7])
+  )

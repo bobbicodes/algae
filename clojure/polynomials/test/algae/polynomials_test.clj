@@ -1,6 +1,6 @@
 (ns algae.polynomials-test
   (:require [clojure.test :refer [deftest testing is]]
-            [algae.polynomials :refer [print-poly sub-poly]]))
+            [algae.polynomials :refer [mult-bi-poly sub-poly]]))
 
 (deftest add-and-subtract-test
   (testing "Subtract polynomials."
@@ -12,3 +12,6 @@
            '(-10 -1 -10)))
     (is (= (sub-poly [1 8 -9] [11 -4 7])
            '(-10 12 -16)))))
+
+(deftest mult-bi-poly-test
+  (is (= [2 15 19 6] (mult-bi-poly [1 7 6] [2 1]))))

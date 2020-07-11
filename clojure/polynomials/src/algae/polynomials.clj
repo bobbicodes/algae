@@ -2,11 +2,14 @@
 
 ;TYPES
 (defrecord Rational [^long numerator ^long denominator])
+
 (defmethod print-method Rational [v ^java.io.Writer w]
   (print-method (:numerator v) w)
   (.write w "/")
   (print-method (:denominator v) w))
+
 (defrecord Complex [^long real ^long imaginary])
+
 (defmethod print-method Complex [v ^java.io.Writer w]
   (print-method (:real v) w)
   (.write w "+")
@@ -363,13 +366,11 @@
            false)))
       (raise-types a b equal?))))
 
-
-
 (defn mult-poly [poly1 poly2]
   (vec (:term-list (sparse-to-dense (mul (dense-to-sparse (Poly. 'b poly1)) (dense-to-sparse (Poly. 'b poly2)))))))
 
 (comment
-  (mult-poly [1 4 3 0] [1 5 0 0]))
+  (mult-poly [1 8] [2 1 3 0]))
 
 (defn zero-pad [poly1 poly2]
   (cond

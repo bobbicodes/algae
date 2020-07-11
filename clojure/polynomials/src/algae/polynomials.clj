@@ -366,10 +366,10 @@
 
 
 (defn mult-poly [poly1 poly2]
-  (mul (dense-to-sparse (Poly. 'b poly1)) (dense-to-sparse (Poly. 'b poly2))))
+  (vec (:term-list (sparse-to-dense (mul (dense-to-sparse (Poly. 'b poly1)) (dense-to-sparse (Poly. 'b poly2)))))))
 
 (comment
-  (mult-poly [1 1 0 0] [1 7 4]))
+  (mult-poly [1 4 3 0] [1 5 0 0]))
 
 (defn zero-pad [poly1 poly2]
   (cond

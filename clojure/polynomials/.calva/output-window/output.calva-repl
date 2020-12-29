@@ -18,3 +18,43 @@
 clj::user=>  ; Use `alt+enter` to evaluate
 ; Jack-in done.
 clj::user=> 
+; Evaluating file: polynomials.clj
+nil
+clj::algae.polynomials=> 
+[2 15 19 6]
+clj::algae.polynomials=> 
+[2 15 19 6]
+clj::algae.polynomials=> 
+[1 7 3 21]
+clj::algae.polynomials=> 
+{:variable nil, :term-list ()}
+clj::algae.polynomials=> 
+{:variable k, :term-list (1 0 7)}
+clj::algae.polynomials=> 
+{:variable k, :term-list ((2 1) (0 7))}
+clj::algae.polynomials=> 
+{:variable k, :term-list ((2 1) (0 7))}
+clj::algae.polynomials=> 
+{:variable k, :term-list ((2 1) (0 7))}
+clj::algae.polynomials=> 
+{:variable k, :term-list ((2 1) (0 7))}
+clj::algae.polynomials=> 
+{:variable k, :term-list ((2 1) (0 3))}
+clj::algae.polynomials=> 
+#'algae.polynomials/width
+clj::algae.polynomials=> 
+#'algae.polynomials/height
+clj::algae.polynomials=> 
+[-1 0 0 0 0 0 0 0 81 0 0 0 0]
+clj::algae.polynomials=> 
+; Execution error (IllegalArgumentException) at algae.polynomials/eval26656$fn$G (polynomials.clj:25).
+; No implementation of method: :mul of protocol: #'algae.polynomials/Algebra found for class: clojure.lang.MapEntry
+clj::algae.polynomials=> 
+; Execution error (IllegalArgumentException) at algae.polynomials/eval26656$fn$G (polynomials.clj:25).
+; No implementation of method: :mul of protocol: #'algae.polynomials/Algebra found for class: clojure.lang.MapEntry
+clj::algae.polynomials=> 
+; Execution error (IllegalArgumentException) at algae.polynomials/eval26656$fn$G (polynomials.clj:25).
+; No implementation of method: :mul of protocol: #'algae.polynomials/Algebra found for class: clojure.lang.MapEntry
+clj::algae.polynomials=> 
+[1 0 10 0 21]
+clj::algae.polynomials=> 

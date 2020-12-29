@@ -33,6 +33,7 @@
   (if (>= n 0.0)
     (Math/floor n)
     (Math/ceil n)))
+
 (defn square [x]
   (mul x x))
 
@@ -311,11 +312,13 @@
        (make-term (+ (order t1) (order t2))
                   (mul (coeff t1) (coeff t2)))
        (mul-term-by-all-terms t1 (rest-terms l))))))
+
 (defn mul-terms [l1 l2]
   (if (empty? l1)
     l1
     (add-terms (mul-term-by-all-terms (first-term l1) l2)
                (mul-terms (rest-terms l1) l2))))
+
 (defn div-terms [l1 l2]
   (if (empty? l1)
     l1
@@ -394,6 +397,9 @@
   (vec (:term-list (sparse-to-dense (mul (dense-to-sparse (Poly. 'b poly1)) (dense-to-sparse (Poly. 'b poly2)))))))
 
 (comment
+  
+  (dense-to-sparse (Poly. 'k '(1 0 7)))
+  
   (mult-poly [1 0 0 0 9 0 0] [-1 0 0 0 9 0 0]))
 
 (defn zero-pad [poly1 poly2]
@@ -462,7 +468,19 @@
 
 (comment
   (mult-bi-poly [1 7 6] [2 1])
-  (mult-bi-poly ))
+  (mult-bi-poly [1 0 3] [1 7]))
+
+; A rectangle has a height of k^2+3 and a width of k^2+7.
+; Express the area of the entire rectangle.
+
+(def height 
+  (dense-to-sparse (Poly. 'k [1 0 3])))
+
+(def width
+  (dense-to-sparse (Poly. 'k [1 0 7])))
+
+(comment 
+  (mult-poly [1 0 3] [1 0 7]))
 
 ; Then the next one is:
 ; 

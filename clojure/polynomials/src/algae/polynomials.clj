@@ -480,7 +480,122 @@
   (dense-to-sparse (Poly. 'k [1 0 7])))
 
 (comment 
-  (mult-poly [1 0 3] [1 0 7]))
+  (mult-poly [1 0 3] [1 0 7])
+  (mult-poly [1 3 9] [1 0 2])
+  (mult-poly [1 0 3] [1 2 5])
+  (mult-poly [1 9] [1 2 0]))
+
+; Average rate of change (ARC) of polynomials
+
+; f(x)=x^2+10
+
+; What is the average rate of change of f over the interval [-2,-1]?
+
+(defn arc [t1 t2 p1 p2]
+  (/ (- (+ (square p1) t2)
+        (+ (square p2) t2))
+     (- p1 p2)))
+
+(comment
+  (arc nil 10 -1 2)
+  )
+
+; g(x) = -(x^2/4) + 7
+
+(defn g [x]
+  (+ (/ (- (square x)) 4) 7))
+
+; What is the average rate of change of g over the interval [-2,4]?
+
+(defn arc [p1 p2]
+  (/ (- (g p1)
+        (g p2))
+     (- p1 p2)))
+
+(comment
+  (g 4)
+  (arc -2 4)
+  
+  )
+
+; f(x) = x^2 − x − 1
+; Over which interval does f have an average rate of change of zero?
+
+(defn f [x]
+  (- (- (square x) x)
+     1))
+
+(f 2)
+(f 3)
+(f -1)
+
+; f(x) = x^3 - 9x
+; What is the average rate of change of f over the interval [1,6] [1,6]?
+
+(defn f [x]
+  (- (* x x x)
+     (* 9 x)))
+
+(defn arc [p1 p2]
+  (/ (- (f p1)
+        (f p2))
+     (- p1 p2)))
+
+(arc 1 6)
+
+; g(t) = −(t−1)^2 + 5
+; Over which interval does g have an average rate of change of zero?
+
+(defn g [t]
+  (+ (- (square (- t 1))) 5))
+
+; let's abstract the thing
+
+(defn arc [f p1 p2]
+  (/ (- (f p1)
+        (f p2))
+     (- p1 p2)))
+
+(arc g -2 0)
+(arc g -4 -3)
+(arc g -2 4)
+
+; f(x) =x^2 − x − 1
+; What is the average rate of change of f over the interval -1<=x<=1?
+
+(defn f [x]
+  (- (- (square x) x) 1))
+
+(arc f -1 1)
+
+; h (x) = x^2 − 1
+; Over which interval does h have a negative average rate of change?
+
+(defn h [x]
+  (- (square x) 1))
+
+(arc h -1 5)
+(arc h -3 5)
+(arc h -3 1)
+
+; f(x)=x^2 +10
+; What is the average rate of change of f over the interval [-2,-1]?
+
+(defn f [x]
+  (+ 10 (square x)))
+
+(arc f -2 -1)
+
+(defn arc-zero? [p1 p2]
+  (= (+ (- (square (- p1 1)))
+        5)
+     (+ (- (square (- p2 1)))
+        5)))
+
+(comment
+  (arc-zero? -2 0)
+  (arc-zero? -2 4)
+  )
 
 ; Then the next one is:
 ; 

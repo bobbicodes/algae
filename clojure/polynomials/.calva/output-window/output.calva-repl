@@ -178,3 +178,22 @@ clj::algae.polynomials=>
 clj::algae.polynomials=> 
 -3
 clj::algae.polynomials=> 
+#'algae.polynomials/f
+clj::algae.polynomials=> 
+-6
+clj::algae.polynomials=> 
+4
+clj::algae.polynomials=> 
+0
+clj::algae.polynomials=> 
+; Execution error (ArityException) at algae.polynomials/eval98089 (REPL:572).
+; Wrong number of args (2) passed to: algae.polynomials/arc
+clj::algae.polynomials=> 
+0
+clj::algae.polynomials=> 
+4
+clj::algae.polynomials=> 
+9
+clj::algae.polynomials=> 
+0
+clj::algae.polynomials=> 

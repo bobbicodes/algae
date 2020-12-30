@@ -485,7 +485,28 @@
   (mult-poly [1 0 3] [1 2 5])
   (mult-poly [1 9] [1 2 0]))
 
+; Then the next one is:
+; 
+; A rectangle has a height of b^3+b^2
+; and a width of b^2+7b+4
+; Express the area of the entire rectangle.
+; Your answer should be a polynomial in standard form.
+
+; We represent it like this:
+
+; [1 1 0 0] [0 1 7 4]
+; 
+; and it needs to get to this:
+; 
+; b^5+8b^4+11b^3+4b^2
+; [1 8 11 4 0 0]
+
+; this is done by first multiplying . . .
+
+; . . . [return to this later?]
+
 ; Average rate of change (ARC) of polynomials
+; https://www.khanacademy.org/math/algebra2/x2ec2f6f830c9fb89:poly-arithmetic/x2ec2f6f830c9fb89:poly-avg-rate/e/avg-rate-of-change?modal=1
 
 ; f(x)=x^2+10
 
@@ -567,6 +588,9 @@
   (- (- (square x) x) 1))
 
 (arc f -1 1)
+(arc f -3 -2)
+(arc f 2 3)
+(arc f -1 2)
 
 ; h (x) = x^2 − 1
 ; Over which interval does h have a negative average rate of change?
@@ -596,21 +620,3 @@
   (arc-zero? -2 0)
   (arc-zero? -2 4)
   )
-
-; Then the next one is:
-; 
-; A rectangle has a height of b^3+b^2
-; and a width of b^2+7b+4
-; Express the area of the entire rectangle.
-; Your answer should be a polynomial in standard form.
-
-; We represent it like this:
-
-; [1 1 0 0] [0 1 7 4]
-; 
-; and it needs to get to this:
-; 
-; b^5+8b^4+11b^3+4b^2
-; [1 8 11 4 0 0]
-
-; this is done by first multiplying
